@@ -11,6 +11,45 @@
 [ext_resource type="PackedScene" uid="uid://ckquios0bji5f" path="res://scenes/window.tscn" id="6_ygxny"]
 [ext_resource type="PackedScene" uid="uid://bow0i8d0evwfe" path="res://scenes/floor.tscn" id="7_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://dx047xshvosb5" path="res://scenes/bun.tscn" id="11_5cypo"]
+[ext_resource type="PackedScene" uid="uid://bvfio3tacbwiy" path="res://scenes/baker.tscn" id="12_o6v7o"]
+[ext_resource type="Texture2D" uid="uid://bodsobcf511fr" path="res://assets/caught.png" id="13_wjob3"]
+
+[sub_resource type="Animation" id="Animation_wjob3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Baker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2324, 576)]
+}
+
+[sub_resource type="Animation" id="Animation_8xp80"]
+resource_name = "caught"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Baker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(2324, 576), Vector2(900, 576)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sp04v"]
+_data = {
+&"RESET": SubResource("Animation_wjob3"),
+&"caught": SubResource("Animation_8xp80")
+}
 
 [node name="MainGame" type="Node2D" unique_id=1497187369]
 script = ExtResource("1_nqdth")
@@ -73,9 +112,20 @@ text = "stop/reset"
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [node name="Bun" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
-position = Vector2(388, 595)
+position = Vector2(533, 669)
+
+[node name="Baker" parent="." unique_id=1343255551 instance=ExtResource("12_o6v7o")]
+position = Vector2(2324, 576)
+
+[node name="BakerAni" type="AnimationPlayer" parent="." unique_id=249938931]
+libraries/ = SubResource("AnimationLibrary_sp04v")
+
+[node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
+position = Vector2(882, 94)
+texture = ExtResource("13_wjob3")
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
+[connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
 [connection signal="pressed" from="StartButton" to="Pillow1" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
