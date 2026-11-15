@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <Project Sdk="Godot.NET.Sdk/4.7.1">
+=======
+<Project Sdk="Godot.NET.Sdk/4.7.2">
+>>>>>>> 519f4d0faf131052bcfdc08026c5aaeaad8c84f2
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net9.0</TargetFramework>

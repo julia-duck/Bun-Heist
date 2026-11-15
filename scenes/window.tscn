@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckquios0bji5f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jif1a"]
+
+[node name="Window" type="Area2D" unique_id=754531406]
+collision_layer = 4
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640766577]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845893229]
+shape = SubResource("RectangleShape2D_jif1a")
