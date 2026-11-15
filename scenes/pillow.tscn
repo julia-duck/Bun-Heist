@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dbshxkwukni22"]
 
 [ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="1_hg3ry"]
+[ext_resource type="Script" uid="uid://bxurpjl0c1ep7" path="res://scripts/Pillow.cs" id="1_wxprh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvnu6"]
 size = Vector2(282, 66)
@@ -8,6 +9,7 @@ size = Vector2(282, 66)
 [node name="Pillow" type="StaticBody2D" unique_id=827920782]
 collision_layer = 8
 collision_mask = 3
+script = ExtResource("1_wxprh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=790542958]
 texture = ExtResource("1_hg3ry")

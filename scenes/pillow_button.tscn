@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cyuihgsv3evhs"]
+
+[node name="PillowButton" type="Button" unique_id=761076655]
+offset_right = 104.0
+offset_bottom = 75.0
+text = "Pillow"
