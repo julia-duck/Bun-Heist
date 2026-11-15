@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://dx047xshvosb5"]
 
+[ext_resource type="Script" uid="uid://bh587dikxxdtc" path="res://scripts/Bun.cs" id="1_ab7u5"]
 [ext_resource type="Texture2D" uid="uid://dab65me4etgko" path="res://assets/bun.png" id="1_x4ka8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jif1a"]
 size = Vector2(110, 95)
 
 [node name="Bun" type="Area2D" unique_id=1610711815]
+script = ExtResource("1_ab7u5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=630375081]
 texture = ExtResource("1_x4ka8")
@@ -13,3 +15,5 @@ texture = ExtResource("1_x4ka8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1815932206]
 position = Vector2(1, 2.5)
 shape = SubResource("RectangleShape2D_jif1a")
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

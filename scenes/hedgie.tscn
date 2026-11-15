@@ -8,7 +8,7 @@ radius = 86.83893
 
 [node name="Hedgie" type="CharacterBody2D" unique_id=415763027]
 collision_layer = 2
-collision_mask = 9
+collision_mask = 25
 script = ExtResource("1_y6old")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=510195886]
