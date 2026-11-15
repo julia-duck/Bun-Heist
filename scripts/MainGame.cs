@@ -11,12 +11,21 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 1;
+	public static int levelNum = 4;
+	
+	public Sprite2D bunCounter1;
+	public Sprite2D bunCounter2;
+	public Sprite2D bunCounter3;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
 		caughtSprite.Hide();
+		bunCounter1 = GetNode<Sprite2D>("BunCounter/BunGet1");
+		bunCounter2 = GetNode<Sprite2D>("BunCounter/BunGet2");
+		bunCounter3 = GetNode<Sprite2D>("BunCounter/BunGet3");
+
 		for (int i = 1; i <= MaxPillowNum; i++) {
 			int rand = GD.RandRange(0, 4);
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
@@ -29,7 +38,7 @@ public partial class MainGame : Node2D
 		//bun2.Show();
 		//bun3.Show();
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
-		SetupLevel(); //comment out for testing levels
+		// SetupLevel(); //comment out for testing levels
 		
 	}
 
@@ -46,6 +55,21 @@ public partial class MainGame : Node2D
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
 			curPillow.Disable();
 		}
+		bunCounter1.Show();
+		bunCounter2.Show();
+		bunCounter3.Show();
+		if (NumBuns == 0) {
+			bunCounter1.Hide();
+			bunCounter2.Hide();
+			bunCounter3.Hide();
+		}
+		else if (NumBuns == 1) {
+			bunCounter2.Hide();
+			bunCounter3.Hide();
+		}
+		else if (NumBuns == 2) {
+			bunCounter3.Hide();
+		}
 	}
 	
 	public void OnPillowButtonClick() {
@@ -58,6 +82,11 @@ public partial class MainGame : Node2D
 	public void OnRetreatButtonClick() {
 		GetNode<Sprite2D>("Baker").Hide();
 		GetNode<Sprite2D>("Caught").Hide();
+		//enable 3 buns collision shape
+		bun1.EnableShape();
+		bun2.EnableShape();
+		bun3.EnableShape();
+		NumBuns = 0;
 		bun1.Show();
 		bun2.Show();
 		bun3.Show();
@@ -79,13 +108,27 @@ public partial class MainGame : Node2D
 	}
 	
 	public void SetupLevel() {
+		NumBuns = 0;
 		bun1.Show();
 		bun2.Show();
 		bun3.Show();
 		switch (levelNum) {
-			case 1: SetBunPos(360, 273, 578, 423, 757, 601); MoveLamp(-200, -200); GetNode<Control>("Tutorial").Show(); break;
-			case 2: SetBunPos(462, 188, 471, 506, 128, 574); MoveLamp(568, 167); GetNode<Control>("Tutorial").Hide(); break;
-			case 3: SetBunPos(1406, 864, 607, 416, 1183, 371); MoveLamp(1384, 265); break;
+			case 1:
+				SetBunPos(360, 273, 578, 423, 757, 601);
+				MoveOffScreen(true, true, true);
+				GetNode<Control>("Tutorial").Show();
+				break;
+			case 2: 
+				SetBunPos(462, 188, 471, 506, 128, 574);
+				MoveOffScreen(false, true, true);
+				MoveLamp(568, 167); 
+				GetNode<Control>("Tutorial").Hide();
+				break;
+			case 3: 
+				SetBunPos(1406, 864, 607, 416, 1183, 371); 
+				MoveOffScreen(false, true, true); 
+				MoveLamp(1384, 265); 
+				break;
 		}
 	}
 	private void SetBunPos(int bun1X, int bun1Y, int bun2X, int bun2Y, int bun3X, int bun3Y) {
@@ -95,5 +138,22 @@ public partial class MainGame : Node2D
 	}
 	public void MoveLamp(int x, int y) {
 		GetNode<StaticBody2D>("Lamp").Position = new Vector2(x, y);
+	}
+	public void MoveCounter1(int x, int y) {
+		GetNode<Sprite2D>("Counter1").Position = new Vector2(x, y);
+	}
+	public void MoveCounter2(int x, int y) {
+		GetNode<Sprite2D>("Counter2").Position = new Vector2(x, y);
+	}
+	public void MoveOffScreen(bool lampOff, bool c1Off, bool c2Off) {
+		if (lampOff) {
+			MoveLamp(-200, -200);
+		}
+		if (c1Off) {
+			MoveCounter1(-200, -200);
+		}
+		if (c2Off) {
+			MoveCounter2(-200, -200);
+		}
 	}
 }
