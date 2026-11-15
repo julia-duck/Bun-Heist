@@ -11,7 +11,7 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 1;
+	public static int levelNum = 3;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -25,8 +25,11 @@ public partial class MainGame : Node2D
 		bun1 = GetNode<Bun>("Bun1");
 		bun2 = GetNode<Bun>("Bun2");
 		bun3 = GetNode<Bun>("Bun3");
+		//bun1.Show();
+		//bun2.Show();
+		//bun3.Show();
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
-		SetupLevel();
+		SetupLevel(); //comment out for testing levels
 		
 	}
 
@@ -43,6 +46,7 @@ public partial class MainGame : Node2D
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
 			curPillow.Disable();
 		}
+		GD.Print(GetNode<Node2D>("Hedgie").GlobalPosition);
 	}
 	
 	public void OnPillowButtonClick() {
@@ -61,9 +65,10 @@ public partial class MainGame : Node2D
 	}
 
 	public async void OnLose() {
+		GetNode<Sprite2D>("Baker").Position = new Vector2(2324, 576);
+		GetNode<Sprite2D>("Baker").Show();
 		globalSound.PlaySound("thump");
 		await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
-		GetNode<Sprite2D>("Baker").Show();
 		AnimationPlayer ani = GetNode<AnimationPlayer>("BakerAni");
 		ani.Play("caught");
 		globalSound.PlaySound("stone_roll");
@@ -75,13 +80,21 @@ public partial class MainGame : Node2D
 	}
 	
 	public void SetupLevel() {
-		if (levelNum == 1) {
-			SetBunPos(360, 273, 578, 423, 757, 601);
+		bun1.Show();
+		bun2.Show();
+		bun3.Show();
+		switch (levelNum) {
+			case 1: SetBunPos(360, 273, 578, 423, 757, 601); MoveLamp(-200, -200); break;
+			case 2: SetBunPos(462, 188, 471, 506, 128, 574); MoveLamp(568, 167); break;
+			case 3: SetBunPos(1406, 864, 607, 416, 1183, 371); MoveLamp(1384, 265); break;
 		}
 	}
 	private void SetBunPos(int bun1X, int bun1Y, int bun2X, int bun2Y, int bun3X, int bun3Y) {
 		bun1.Position = new Vector2(bun1X, bun1Y);
 		bun2.Position = new Vector2(bun2X, bun2Y);
 		bun3.Position = new Vector2(bun3X, bun3Y);
+	}
+	public void MoveLamp(int x, int y) {
+		GetNode<StaticBody2D>("Lamp").Position = new Vector2(x, y);
 	}
 }

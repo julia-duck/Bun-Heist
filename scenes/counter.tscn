@@ -8,15 +8,15 @@ size = Vector2(811, 885)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3s0oq"]
 size = Vector2(37, 63)
 
-[node name="Counter" type="StaticBody2D" unique_id=1783139472]
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1889345786]
+[node name="Counter" type="Sprite2D" unique_id=1447317909]
 texture = ExtResource("1_sc7mx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1405163165]
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=96622740]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1405163165]
 position = Vector2(555.5, 155.5)
 shape = SubResource("RectangleShape2D_jif1a")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1582038581]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=1582038581]
 position = Vector2(131.5, -255.5)
 shape = SubResource("RectangleShape2D_3s0oq")

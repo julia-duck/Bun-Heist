@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+[gd_scene format=3 uid="uid://hpqesqd1ad50"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://bodsobcf511fr" path="res://assets/caught.png" id="13_wjob3"]
 [ext_resource type="Texture2D" uid="uid://biw0qwfwtmg8f" path="res://assets/bun_sillouette.png" id="14_8xp80"]
 [ext_resource type="Texture2D" uid="uid://dab65me4etgko" path="res://assets/bun.png" id="15_sp04v"]
+[ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
+[ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -62,6 +64,16 @@ centered = false
 
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
+scale = Vector2(1, 2)
+
+[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
+position = Vector2(1384, 265)
+
+[node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
+position = Vector2(-1301, -906)
+
+[node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
+position = Vector2(1430, 948)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
 position = Vector2(862, 804)
@@ -73,7 +85,7 @@ position = Vector2(1623, 259)
 position = Vector2(1608, 120)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-z_index = 4096
+z_index = 4000
 position = Vector2(139, 155)
 StartX = 135
 StartY = 170
@@ -117,13 +129,14 @@ text = "stop/reset"
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
-position = Vector2(462, 188)
+position = Vector2(1406, 864)
+collision_mask = 2
 
 [node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
-position = Vector2(772, 669)
+position = Vector2(607, 416)
 
 [node name="Bun3" parent="." unique_id=760328884 instance=ExtResource("11_5cypo")]
-position = Vector2(272, 821)
+position = Vector2(1183, 371)
 
 [node name="Baker" parent="." unique_id=1343255551 instance=ExtResource("12_o6v7o")]
 position = Vector2(2324, 576)
@@ -164,6 +177,7 @@ texture = ExtResource("15_sp04v")
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
+[connection signal="pressed" from="StartButton" to="." method="OnRetreatButtonClick"]
 [connection signal="pressed" from="StartButton" to="Pillow1" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow3" method="OnStart"]

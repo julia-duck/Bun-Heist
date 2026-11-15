@@ -78,6 +78,7 @@ public partial class Hedgie : CharacterBody2D
 	public void OnStartPhysics()
 	{
 		EnablePhysics = true;
+		Position = new Godot.Vector2(StartX, StartY);
 		Velocity = new Godot.Vector2(StartVelocity, 0);
 	}
 	public void OnStopPhysics()
