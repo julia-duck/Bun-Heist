@@ -5,7 +5,7 @@ public partial class MainGame : Node2D
 {
 	[Export]
 	public int MaxPillowNum = 3;
-	public int CurPillowNum = 1;
+	public int CurPillowNum = 0;
 	public int NumBuns = 0;
 	public GlobalSound globalSound;
 	public Bun bun1;
