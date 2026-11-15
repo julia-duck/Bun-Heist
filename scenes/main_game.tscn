@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dab65me4etgko" path="res://assets/bun.png" id="15_sp04v"]
 [ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
 [ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
+[ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -221,8 +222,8 @@ vframes = 5
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
 
-[node name="Lamp2" parent="." unique_id=1647943822 instance=ExtResource("16_ihbck")]
-position = Vector2(1476, 205)
+[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
+position = Vector2(1476, 152)
 
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
@@ -249,7 +250,7 @@ text = "stop/reset"
 position = Vector2(1778, 295)
 
 [node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
-position = Vector2(944, 389)
+position = Vector2(928, 305)
 
 [node name="Bun3" parent="." unique_id=760328884 instance=ExtResource("11_5cypo")]
 position = Vector2(1393, 638)
@@ -289,6 +290,18 @@ texture = ExtResource("15_sp04v")
 [node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
+
+[node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
+position = Vector2(0, 400)
+texture = ExtResource("19_5luka")
+centered = false
+
+[node name="Button" type="Button" parent="Complete" unique_id=934767500]
+offset_left = 732.0
+offset_top = 378.0
+offset_right = 1173.0
+offset_bottom = 537.0
+text = "Next Level"
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
