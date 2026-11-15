@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://1moagmc7avfo"]
 
+[ext_resource type="Texture2D" uid="uid://bw0srisje3me0" path="res://assets/launch.png" id="1_pfnhw"]
+
 [node name="StartButton" type="Button" unique_id=1275617812]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 230.0
+offset_bottom = 100.0
 text = "start"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983069926]
+position = Vector2(115, 50)
+texture = ExtResource("1_pfnhw")

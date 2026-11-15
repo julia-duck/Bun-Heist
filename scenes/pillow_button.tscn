@@ -1,6 +1,13 @@
 [gd_scene format=3 uid="uid://cyuihgsv3evhs"]
 
+[ext_resource type="Texture2D" uid="uid://puo4boudxi5e" path="res://assets/add_pillow.png" id="1_cmfy6"]
+
 [node name="PillowButton" type="Button" unique_id=761076655]
-offset_right = 104.0
-offset_bottom = 75.0
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 230.0
+offset_bottom = 100.0
 text = "Pillow"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1852302966]
+position = Vector2(115, 50)
+texture = ExtResource("1_cmfy6")

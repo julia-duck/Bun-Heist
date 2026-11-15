@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://pb7eyr0803cv"]
+[gd_scene format=3 uid="uid://c4s1edb7iwwwe"]
 
 [ext_resource type="Script" uid="uid://6wgf2vr8djph" path="res://scripts/MainGame.cs" id="1_ykeeq"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_yx7mw"]

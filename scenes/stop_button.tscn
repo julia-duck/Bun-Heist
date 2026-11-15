@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://poc02j64xflg"]
 
+[ext_resource type="Texture2D" uid="uid://w8x2xs1cmli8" path="res://assets/retreat.png" id="1_sy1x5"]
+
 [node name="StopButton" type="Button" unique_id=1275617812]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 230.0
+offset_bottom = 100.0
 text = "stop
 "
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=983069926]
+position = Vector2(115, 50)
+texture = ExtResource("1_sy1x5")

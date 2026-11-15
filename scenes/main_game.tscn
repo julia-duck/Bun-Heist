@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hpqesqd1ad50"]
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -32,7 +32,7 @@ position = Vector2(572, 503)
 position = Vector2(729, 611)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-position = Vector2(109, 197)
+position = Vector2(95, 177)
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
 position = Vector2(960, -1125)
@@ -52,22 +52,22 @@ position = Vector2(2595, 600)
 scale = Vector2(3, 3)
 
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
-offset_left = 213.0
-offset_top = 7.0
-offset_right = 317.0
-offset_bottom = 82.0
+offset_left = 545.0
+offset_top = 30.0
+offset_right = 649.0
+offset_bottom = 105.0
 
 [node name="StartButton" parent="." unique_id=1275617812 instance=ExtResource("4_ipu61")]
-offset_left = 33.0
-offset_top = 25.0
-offset_right = 78.0
-offset_bottom = 56.0
+offset_left = 845.0
+offset_top = 30.0
+offset_right = 890.0
+offset_bottom = 61.0
 
 [node name="StopButton" parent="." unique_id=2102587589 instance=ExtResource("5_ygxny")]
-offset_left = 102.0
-offset_top = 25.0
-offset_right = 147.0
-offset_bottom = 56.0
+offset_left = 1145.0
+offset_top = 30.0
+offset_right = 1233.0
+offset_bottom = 61.0
 text = "stop/reset"
 
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]

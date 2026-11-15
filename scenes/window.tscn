@@ -1,31 +1,13 @@
 [gd_scene format=3 uid="uid://ckquios0bji5f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jif1a"]
-size = Vector2(245.5, 182.25)
+size = Vector2(100, 100)
 
 [node name="Window" type="Area2D" unique_id=754531406]
 collision_layer = 4
 collision_mask = 2
 
-[node name="Label" type="Label" parent="." unique_id=1907209376]
-offset_left = -164.0
-offset_top = -139.0
-offset_right = 169.0
-offset_bottom = 144.0
-text = "WINDOW Window window window window
-
-
-
-
-WINDOW Window window window window
-
-
-
-
-WINDOW Window window window window"
-
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1640766577]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1845893229]
-position = Vector2(5.25, -1.125)
 shape = SubResource("RectangleShape2D_jif1a")

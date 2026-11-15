@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="1_hg3ry"]
 [ext_resource type="Script" uid="uid://bxurpjl0c1ep7" path="res://scripts/Pillow.cs" id="1_wxprh"]
+[ext_resource type="Texture2D" uid="uid://cm21q5c8ly2hq" path="res://assets/rotate.png" id="3_1luaj"]
+[ext_resource type="Texture2D" uid="uid://dm510nd82hr5u" path="res://assets/trash.png" id="4_lq0hf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvnu6"]
 size = Vector2(282, 66)
@@ -16,5 +18,35 @@ texture = ExtResource("1_hg3ry")
 vframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1053029163]
-position = Vector2(2, 0)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_xvnu6")
+
+[node name="Buttons" type="Node2D" parent="." unique_id=1317232137]
+
+[node name="RotateButton" type="Button" parent="Buttons" unique_id=2090902729]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -50.0
+offset_top = -150.0
+offset_right = 49.0
+offset_bottom = -60.0
+text = "rotate"
+
+[node name="RotateSprite" type="Sprite2D" parent="Buttons" unique_id=1959197493]
+position = Vector2(0, -110)
+texture = ExtResource("3_1luaj")
+
+[node name="TrashButton" type="Button" parent="Buttons" unique_id=377964916]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 130.0
+offset_top = -153.0
+offset_right = 229.0
+offset_bottom = -63.0
+text = "trash"
+
+[node name="TrashSprite" type="Sprite2D" parent="Buttons" unique_id=861978933]
+position = Vector2(180, -110)
+texture = ExtResource("4_lq0hf")
+
+[connection signal="button_down" from="Buttons/RotateButton" to="." method="OnRotateButtonDown"]
+[connection signal="button_up" from="Buttons/RotateButton" to="." method="OnRotateButtonUp"]
+[connection signal="pressed" from="Buttons/TrashButton" to="." method="OnDeletePressed"]

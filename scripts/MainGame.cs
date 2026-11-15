@@ -10,7 +10,6 @@ public partial class MainGame : Node2D
 	{
 		for (int i = 1; i <= MaxPillowNum; i++) {
 			int rand = GD.RandRange(0, 4);
-			GD.Print(rand);
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
 			GetNode<Pillow>("Pillow" + i).Show();
 		}
@@ -28,8 +27,7 @@ public partial class MainGame : Node2D
 		}
 		for (int i = CurPillowNum + 1; i <= MaxPillowNum; i++) {
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
-			curPillow.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
-			curPillow.Hide();
+			curPillow.Disable();
 		}
 	}
 	
