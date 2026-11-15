@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bvfio3tacbwiy"]
+
+[ext_resource type="Texture2D" uid="uid://d2hok4hux68e1" path="res://assets/person.png" id="1_dqxag"]
+
+[node name="Baker" type="Sprite2D" unique_id=1343255551]
+texture = ExtResource("1_dqxag")

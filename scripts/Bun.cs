@@ -16,6 +16,9 @@ public partial class Bun : Area2D
 	public void OnBodyEntered(Node2D hedgie)
 	{
 		Hide();
-		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+		CollisionShape2D colShape = GetNode<CollisionShape2D>("CollisionShape2D");
+		SetDeferred("disabled", true);
+		MainGame par = GetNode<MainGame>("..");
+		par.NumBuns++;
 	}
 }

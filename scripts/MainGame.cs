@@ -5,9 +5,12 @@ public partial class MainGame : Node2D
 {
 	public int MaxPillowNum = 3;
 	public int CurPillowNum = 1;
+	public int NumBuns = 0;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
+		caughtSprite.Hide();
 		for (int i = 1; i <= MaxPillowNum; i++) {
 			int rand = GD.RandRange(0, 4);
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
@@ -36,5 +39,12 @@ public partial class MainGame : Node2D
 		if (CurPillowNum < MaxPillowNum) {
 			CurPillowNum += 1;
 		}
+	}
+	public async void OnLose() {
+		AnimationPlayer ani = GetNode<AnimationPlayer>("BakerAni");
+		ani.Play("caught");
+		await ToSignal(ani, AnimationPlayer.SignalName.AnimationFinished);
+		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
+		caughtSprite.Show();
 	}
 }
