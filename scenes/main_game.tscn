@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+[gd_scene format=3 uid="uid://hpqesqd1ad50"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -107,7 +107,7 @@ scale = Vector2(3, 3)
 position = Vector2(2595, 600)
 scale = Vector2(3, 3)
 
-[node name="Box" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
+[node name="Box2" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
 position = Vector2(953, 805)
 
 [node name="Tutorial" type="Control" parent="." unique_id=1264779014]
@@ -217,35 +217,12 @@ rotation = -0.7853982
 texture = ExtResource("3_ikqpi")
 vframes = 5
 
-[node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
+[node name="Window2" parent="." unique_id=186923557 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
 
-[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
+[node name="Lamp2" parent="." unique_id=1647943822 instance=ExtResource("16_ihbck")]
 position = Vector2(1476, 205)
-
-[node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
-visible = false
-position = Vector2(-1301, -906)
-
-[node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
-visible = false
-position = Vector2(1969, 1054)
-
-[node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
-position = Vector2(862, 804)
-
-[node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
-position = Vector2(522, 661)
-
-[node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
-position = Vector2(1405, 798)
-
-[node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-z_index = 4000
-position = Vector2(139, 155)
-StartX = 135
-StartY = 170
 
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
