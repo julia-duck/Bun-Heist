@@ -23,10 +23,12 @@ public partial class MainGame : Node2D
 		//show/hide pillows based on current number
 		for (int i = 1; i <= CurPillowNum; i++) {
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
+			curPillow.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
 			curPillow.Show();
 		}
 		for (int i = CurPillowNum + 1; i <= MaxPillowNum; i++) {
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
+			curPillow.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
 			curPillow.Hide();
 		}
 	}

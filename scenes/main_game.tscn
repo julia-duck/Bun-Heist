@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cyuihgsv3evhs" path="res://scenes/pillow_button.tscn" id="6_2l77h"]
 [ext_resource type="PackedScene" uid="uid://ckquios0bji5f" path="res://scenes/window.tscn" id="6_ygxny"]
 [ext_resource type="PackedScene" uid="uid://bow0i8d0evwfe" path="res://scenes/floor.tscn" id="7_wi4c7"]
+[ext_resource type="PackedScene" uid="uid://dx047xshvosb5" path="res://scenes/bun.tscn" id="11_5cypo"]
 
 [node name="MainGame" type="Node2D" unique_id=1497187369]
 script = ExtResource("1_nqdth")
@@ -70,6 +71,9 @@ offset_bottom = 56.0
 text = "stop/reset"
 
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
+
+[node name="Bun" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
+position = Vector2(388, 595)
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
