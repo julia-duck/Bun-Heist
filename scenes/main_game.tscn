@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://hpqesqd1ad50"]
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://6wgf2vr8djph" path="res://scripts/MainGame.cs" id="1_nqdth"]
 [ext_resource type="PackedScene" uid="uid://ceb2khe5etvmo" path="res://scenes/hedgie.tscn" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="3_ikqpi"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
 [ext_resource type="PackedScene" uid="uid://poc02j64xflg" path="res://scenes/stop_button.tscn" id="5_ygxny"]
@@ -62,6 +63,7 @@ script = ExtResource("1_nqdth")
 texture = ExtResource("1_70vka")
 centered = false
 
+<<<<<<< HEAD
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
@@ -94,8 +96,11 @@ StartX = 135
 StartY = 170
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
+=======
+[node name="Ceiling" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
+>>>>>>> 82e11bb8cac927655d37e00acdc1d811c548e7b0
 position = Vector2(960, -1125)
-rotation = -0.0035917717
+rotation = -0.003591772
 scale = Vector2(5, 5)
 
 [node name="Wall" parent="." unique_id=1874969561 instance=ExtResource("3_ipu61")]
@@ -106,9 +111,145 @@ scale = Vector2(3, 3)
 position = Vector2(2595, 600)
 scale = Vector2(3, 3)
 
-[node name="Wall3" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
-position = Vector2(2595, 600)
-scale = Vector2(3, 3)
+[node name="Box" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
+position = Vector2(953, 805)
+
+[node name="Tutorial" type="Control" parent="." unique_id=1264779014]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tutorial" type="ColorRect" parent="Tutorial" unique_id=929017816]
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 369.0
+offset_right = 1891.0
+offset_bottom = 806.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial" unique_id=683804769]
+custom_minimum_size = Vector2(670, 0)
+custom_maximum_size = Vector2(670, -1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 785.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 30
+text = "Maven needs to collect all the hot cross buns without getting caught!
+- Drag and position bouncy pillows with a mouse
+- Drag the rotate icon to rotate a pillow
+
+Place the pillows in the right locations to help Maven collect the buns AND bounce back to the entrance without touching the floor!
+"
+autowrap_mode = 2
+
+[node name="Tutorial2" type="ColorRect" parent="Tutorial" unique_id=105568734]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 143.0
+offset_right = 796.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial2" unique_id=1770219540]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to add a bouncy 
+pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial3" type="ColorRect" parent="Tutorial" unique_id=370169860]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 143.0
+offset_right = 1108.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial3" unique_id=1113785620]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to launch when you're ready!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial4" type="ColorRect" parent="Tutorial" unique_id=167464995]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 142.0
+offset_right = 1420.0
+offset_bottom = 278.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial4" unique_id=1284798078]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to reset Maven's position (after launching)!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial" unique_id=174981588]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(948.0001, 789)
+rotation = -0.7853982
+texture = ExtResource("3_ikqpi")
+vframes = 5
+
+[node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
+position = Vector2(3, 161)
+scale = Vector2(1, 2)
+
+[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
+position = Vector2(1476, 205)
+
+[node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
+visible = false
+position = Vector2(-1301, -906)
+
+[node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
+visible = false
+position = Vector2(1969, 1054)
+
+[node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
+position = Vector2(862, 804)
+
+[node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
+position = Vector2(522, 661)
+
+[node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
+position = Vector2(1405, 798)
+
+[node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
+z_index = 4000
+position = Vector2(139, 155)
+StartX = 135
+StartY = 170
 
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
@@ -132,13 +273,13 @@ text = "stop/reset"
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
-position = Vector2(1406, 864)
+position = Vector2(1778, 295)
 
 [node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
-position = Vector2(607, 416)
+position = Vector2(944, 389)
 
 [node name="Bun3" parent="." unique_id=760328884 instance=ExtResource("11_5cypo")]
-position = Vector2(1183, 371)
+position = Vector2(1393, 638)
 
 [node name="Baker" parent="." unique_id=1343255551 instance=ExtResource("12_o6v7o")]
 position = Vector2(2324, 576)
@@ -175,26 +316,6 @@ texture = ExtResource("15_sp04v")
 [node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
-
-[node name="Tutorial" type="ColorRect" parent="." unique_id=929017816]
-offset_left = 1179.0
-offset_top = 189.0
-offset_right = 1882.0
-offset_bottom = 361.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-
-[node name="Label" type="Label" parent="Tutorial" unique_id=683804769]
-custom_minimum_size = Vector2(670, 0)
-custom_maximum_size = Vector2(670, -1)
-layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 785.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 30
-text = "Maven needs to collect all the hot cross buns without getting caught!
-Click “add pillow”"
-autowrap_mode = 2
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
