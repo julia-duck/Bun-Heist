@@ -7,6 +7,7 @@ public partial class MainGame : Node2D
 	public int MaxPillowNum = 3;
 	public int CurPillowNum = 1;
 	public int NumBuns = 0;
+	public GlobalSound globalSound;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -17,6 +18,7 @@ public partial class MainGame : Node2D
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
 			GetNode<Pillow>("Pillow" + i).Show();
 		}
+		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
 		
 	}
 
@@ -48,9 +50,12 @@ public partial class MainGame : Node2D
 	}
 
 	public async void OnLose() {
+		globalSound.PlaySound("thump");
+		await ToSignal(GetTree().CreateTimer(1.5f), SceneTreeTimer.SignalName.Timeout);
 		GetNode<Sprite2D>("Baker").Show();
 		AnimationPlayer ani = GetNode<AnimationPlayer>("BakerAni");
 		ani.Play("caught");
+		globalSound.PlaySound("stone_roll");
 		await ToSignal(ani, AnimationPlayer.SignalName.AnimationFinished);
 		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
 		if (GetNode<Sprite2D>("Baker").Visible) {

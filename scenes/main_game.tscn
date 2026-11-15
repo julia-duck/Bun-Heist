@@ -42,7 +42,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1.4666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(2324, 576), Vector2(900, 576)]
+"values": [Vector2(2324, 576), Vector2(1700, 576)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sp04v"]
@@ -71,6 +71,7 @@ position = Vector2(572, 503)
 position = Vector2(729, 611)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
+z_index = 4096
 position = Vector2(139, 155)
 StartX = 135
 StartY = 170

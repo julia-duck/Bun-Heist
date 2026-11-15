@@ -5,7 +5,7 @@ public partial class GlobalSound : Node
 {
 	private AudioStreamPlayer SoundPlayer;
 
-	private AudioStream collect_bun, bounce, success;
+	private AudioStream collect_bun, bounce, success, stone_roll, thump;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -15,6 +15,8 @@ public partial class GlobalSound : Node
 		collect_bun = ResourceLoader.Load<AudioStream>("res://sound/collect_bun.wav");
 		bounce = ResourceLoader.Load<AudioStream>("res://sound/pillow_bounce.wav");
 		success = ResourceLoader.Load<AudioStream>("res://sound/success.wav");
+		stone_roll = ResourceLoader.Load<AudioStream>("res://sound/stone_roll.wav");
+		thump = ResourceLoader.Load<AudioStream>("res://sound/thump.wav");
 
 	}
 
