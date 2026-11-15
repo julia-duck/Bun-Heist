@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://m73bsvo6qjj6"]
+
+[ext_resource type="Script" uid="uid://c34t2mdlwv6ej" path="res://scripts/GlobalSound.cs" id="1_c471n"]
+
+[node name="GlobalSound" type="Node" unique_id=1519018033]
+script = ExtResource("1_c471n")
+
+[node name="SoundEffectPlayer" type="AudioStreamPlayer" parent="." unique_id=2074769094]
