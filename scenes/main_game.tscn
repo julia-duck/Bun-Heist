@@ -69,13 +69,13 @@ position = Vector2(3, 161)
 scale = Vector2(1, 2)
 
 [node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
-position = Vector2(1384, 265)
+position = Vector2(436, -166)
 
 [node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
 position = Vector2(-1301, -906)
 
 [node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
-position = Vector2(1430, 948)
+position = Vector2(1442, 1145)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
 z_index = 100
@@ -109,7 +109,7 @@ position = Vector2(2595, 600)
 scale = Vector2(3, 3)
 
 [node name="Box2" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
-position = Vector2(953, 805)
+position = Vector2(-296, 970)
 
 [node name="Tutorial" type="Control" parent="." unique_id=1264779014]
 visible = false
@@ -244,13 +244,13 @@ text = "stop/reset"
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
-position = Vector2(1778, 295)
+position = Vector2(450, 604)
 
 [node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
-position = Vector2(928, 305)
+position = Vector2(936, 315)
 
 [node name="Bun3" parent="." unique_id=760328884 instance=ExtResource("11_5cypo")]
-position = Vector2(1393, 638)
+position = Vector2(1662, 260)
 
 [node name="Baker" parent="." unique_id=1343255551 instance=ExtResource("12_o6v7o")]
 position = Vector2(2324, 576)
@@ -289,6 +289,7 @@ position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
 
 [node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
+visible = false
 position = Vector2(0, 400)
 texture = ExtResource("19_5luka")
 centered = false

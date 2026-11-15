@@ -134,6 +134,11 @@ public partial class MainGame : Node2D
 				MoveOffScreen(false, true, true); 
 				MoveLamp(1476, 152);
 				break;
+			case 5:
+				SetBunPos(450, 604, 936, 315, 1662, 260);
+				MoveOffScreen(true, true, false);
+				MoveCounter1(1442, 1145);
+				break;
 		}
 	}
 	private void SetBunPos(int bun1X, int bun1Y, int bun2X, int bun2Y, int bun3X, int bun3Y) {
