@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hpqesqd1ad50"]
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://dx047xshvosb5" path="res://scenes/bun.tscn" id="11_5cypo"]
 [ext_resource type="PackedScene" uid="uid://bvfio3tacbwiy" path="res://scenes/baker.tscn" id="12_o6v7o"]
 [ext_resource type="Texture2D" uid="uid://bodsobcf511fr" path="res://assets/caught.png" id="13_wjob3"]
+[ext_resource type="Texture2D" uid="uid://biw0qwfwtmg8f" path="res://assets/bun_sillouette.png" id="14_8xp80"]
+[ext_resource type="Texture2D" uid="uid://dab65me4etgko" path="res://assets/bun.png" id="15_sp04v"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -132,6 +134,32 @@ libraries/ = SubResource("AnimationLibrary_sp04v")
 [node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
 position = Vector2(882, 1100)
 texture = ExtResource("13_wjob3")
+
+[node name="BunCounter" type="Node2D" parent="." unique_id=1795091298]
+
+[node name="Sillou1" type="Sprite2D" parent="BunCounter" unique_id=2110688727]
+position = Vector2(1540, 80)
+texture = ExtResource("14_8xp80")
+
+[node name="Sillou2" type="Sprite2D" parent="BunCounter" unique_id=1178323414]
+position = Vector2(1680, 80)
+texture = ExtResource("14_8xp80")
+
+[node name="Sillou3" type="Sprite2D" parent="BunCounter" unique_id=1551206245]
+position = Vector2(1820, 80)
+texture = ExtResource("14_8xp80")
+
+[node name="BunGet1" type="Sprite2D" parent="BunCounter" unique_id=1938929617]
+position = Vector2(1540, 80)
+texture = ExtResource("15_sp04v")
+
+[node name="BunGet2" type="Sprite2D" parent="BunCounter" unique_id=487182321]
+position = Vector2(1680, 80)
+texture = ExtResource("15_sp04v")
+
+[node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
+position = Vector2(1820, 80)
+texture = ExtResource("15_sp04v")
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
