@@ -14,6 +14,7 @@ public partial class Hedgie : CharacterBody2D
 	public int StartVelocity = 500;
 	[Export] //unexport later
 	public int CushionBounciness = 1000;
+	
 	public const float Speed = 300.0f;
 	public float Gravity = 0.0003F;
 	public bool EnablePhysics = false;
@@ -77,6 +78,7 @@ public partial class Hedgie : CharacterBody2D
 	public void OnStartPhysics()
 	{
 		EnablePhysics = true;
+		Position = new Godot.Vector2(StartX, StartY);
 		Velocity = new Godot.Vector2(StartVelocity, 0);
 	}
 	public void OnStopPhysics()
@@ -87,6 +89,8 @@ public partial class Hedgie : CharacterBody2D
 	public void OnFinishLevel(Node2D player)
 	{
 		globalSound.PlaySound("success");
+		MainGame.levelNum++;
+		GetNode<MainGame>("..").SetupLevel();
 		EnablePhysics = false;
 	}
 }

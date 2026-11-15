@@ -25,7 +25,4 @@ public partial class Bun : Area2D
 		par.NumBuns++;
 		globalSound.PlaySound("collect_bun");
 	}
-	public void OnResetLevel() {
-		Show();
-	}
 }
