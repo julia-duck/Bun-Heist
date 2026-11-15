@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ceb2khe5etvmo"]
+
+[ext_resource type="Script" uid="uid://v3jat03unsef" path="res://scripts/Hedgie.cs" id="1_y6old"]
+[ext_resource type="Texture2D" uid="uid://csorrrdy0i6ev" path="res://assets/hedgie.png" id="2_ehbt1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6old"]
+radius = 86.83893
+
+[node name="Hedgie" type="CharacterBody2D" unique_id=415763027]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_y6old")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=510195886]
+shape = SubResource("CircleShape2D_y6old")
+
+[node name="HedgieSprite" type="Sprite2D" parent="." unique_id=288625122]
+texture = ExtResource("2_ehbt1")

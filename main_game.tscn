@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+
+[ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_yx7mw"]
+[ext_resource type="PackedScene" uid="uid://ceb2khe5etvmo" path="res://scenes/hedgie.tscn" id="2_ykeeq"]
+
+[node name="MainGame" type="Node2D" unique_id=1497187369]
+
+[node name="Pillow" parent="." unique_id=932516903 instance=ExtResource("1_yx7mw")]
+position = Vector2(393, 609)
+
+[node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_ykeeq")]
+position = Vector2(288, 156)

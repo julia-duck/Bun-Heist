@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dbshxkwukni22"]
+
+[ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="1_hg3ry"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvnu6"]
+size = Vector2(282, 66)
+
+[node name="Pillow" type="StaticBody2D" unique_id=827920782]
+collision_layer = 8
+collision_mask = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=790542958]
+texture = ExtResource("1_hg3ry")
+vframes = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1053029163]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_xvnu6")

@@ -9,18 +9,19 @@ public partial class Hedgie : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		Vector2 velocity = Velocity;
-
 		// Add the gravity.
 		if (!IsOnFloor())
 		{
 			velocity += GetGravity() * (float)delta;
 		}
+		Velocity = velocity;
+		MoveAndSlide();
 		int collisionCount = GetSlideCollisionCount();
 		for (int i = 0; i < collisionCount; i++) {
-			var info = getSlideCollision(i);
+			var info = GetSlideCollision(i);
 			var collider = info.GetCollider();
-			if (collider is RigidBody2D pillow) {
-				velocity = info.getNormal() * new Vector2(300, 300); //change vector2 to make it even bouncier
+			if (collider is StaticBody2D pillow) {
+				Velocity = info.GetNormal() * new Vector2(1000, 1000); //change vector2 to make it even bouncier
 			}
 		}
 
@@ -37,7 +38,5 @@ public partial class Hedgie : CharacterBody2D
 			//velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 		//}
 
-		Velocity = velocity;
-		MoveAndSlide();
 	}
 }
