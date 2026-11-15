@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0qu34f8molfg"]
 
 [ext_resource type="Texture2D" uid="uid://c3lejb01pr7ut" path="res://assets/opening.png" id="1_fgkus"]
-[ext_resource type="Script" uid="uid://chdwug02lbihm" path="res://scenes/TitleScreen.cs" id="1_s4lrb"]
+[ext_resource type="Script" uid="uid://chdwug02lbihm" path="res://scripts/TitleScreen.cs" id="1_s4lrb"]
 [ext_resource type="Texture2D" uid="uid://1xgdryjg6eik" path="res://assets/title_screen.png" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://c23v7rpj7ys37" path="res://assets/begin_game.png" id="4_mgrm8"]
 
@@ -137,7 +137,6 @@ frame_progress = 0.5862905
 centered = false
 
 [node name="Title" type="AnimatedSprite2D" parent="." unique_id=1284171069]
-position = Vector2(6, 18)
 sprite_frames = SubResource("SpriteFrames_3s0oq")
 autoplay = "default"
 frame_progress = 0.5374601
@@ -154,5 +153,19 @@ text = "Start!"
 [node name="Start" type="Sprite2D" parent="." unique_id=203938624]
 position = Vector2(451, 959)
 texture = ExtResource("4_mgrm8")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1654233878]
+offset_right = 1920.0
+offset_bottom = 1200.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect" unique_id=1201095047]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1200.0
+theme_override_font_sizes/font_size = 50
+text = "Disclaimer: Do not feet hot cross buns to hedgehogs."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="OnBeginPressed"]

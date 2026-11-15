@@ -155,6 +155,26 @@ texture = ExtResource("15_sp04v")
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
 
+[node name="Tutorial" type="ColorRect" parent="." unique_id=929017816]
+offset_left = 1179.0
+offset_top = 189.0
+offset_right = 1882.0
+offset_bottom = 361.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+
+[node name="Label" type="Label" parent="Tutorial" unique_id=683804769]
+custom_minimum_size = Vector2(670, 0)
+custom_maximum_size = Vector2(670, -1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 785.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 30
+text = "Maven needs to collect all the hot cross buns without getting caught!
+Click “add pillow”"
+autowrap_mode = 2
+
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
