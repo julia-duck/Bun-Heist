@@ -63,7 +63,6 @@ script = ExtResource("1_nqdth")
 texture = ExtResource("1_70vka")
 centered = false
 
-<<<<<<< HEAD
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
@@ -96,9 +95,6 @@ StartX = 135
 StartY = 170
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
-=======
-[node name="Ceiling" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
->>>>>>> 82e11bb8cac927655d37e00acdc1d811c548e7b0
 position = Vector2(960, -1125)
 rotation = -0.003591772
 scale = Vector2(5, 5)
