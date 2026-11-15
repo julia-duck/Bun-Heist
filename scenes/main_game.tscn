@@ -59,7 +59,7 @@ texture = ExtResource("1_70vka")
 centered = false
 
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
-position = Vector2(189, 167)
+position = Vector2(3, 161)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
 position = Vector2(957, 772)
@@ -71,8 +71,8 @@ position = Vector2(572, 503)
 position = Vector2(729, 611)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-position = Vector2(95, 170)
-StartX = 95
+position = Vector2(139, 155)
+StartX = 135
 StartY = 170
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
@@ -138,3 +138,4 @@ texture = ExtResource("13_wjob3")
 [connection signal="pressed" from="StopButton" to="Pillow2" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Pillow3" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Hedgie" method="OnStopPhysics"]
+[connection signal="pressed" from="StopButton" to="Bun" method="OnResetLevel"]

@@ -53,6 +53,8 @@ public partial class MainGame : Node2D
 		ani.Play("caught");
 		await ToSignal(ani, AnimationPlayer.SignalName.AnimationFinished);
 		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
-		caughtSprite.Show();
+		if (GetNode<Sprite2D>("Baker").Visible) {
+			caughtSprite.Show();
+		}
 	}
 }

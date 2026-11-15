@@ -8,6 +8,7 @@ public partial class Bun : Area2D
 	public override void _Ready()
 	{
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
+		Show();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,5 +24,8 @@ public partial class Bun : Area2D
 		MainGame par = GetNode<MainGame>("..");
 		par.NumBuns++;
 		globalSound.PlaySound("collect_bun");
+	}
+	public void OnResetLevel() {
+		Show();
 	}
 }
