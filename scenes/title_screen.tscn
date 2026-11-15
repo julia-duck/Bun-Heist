@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://d0qu34f8molfg"]
+
+[ext_resource type="Texture2D" uid="uid://c3lejb01pr7ut" path="res://assets/opening.png" id="1_fgkus"]
+[ext_resource type="Script" uid="uid://chdwug02lbihm" path="res://scenes/TitleScreen.cs" id="1_s4lrb"]
+[ext_resource type="Texture2D" uid="uid://1xgdryjg6eik" path="res://assets/title_screen.png" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://c23v7rpj7ys37" path="res://assets/begin_game.png" id="4_mgrm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tklts"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(5760, 1200, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs5ya"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(1920, 1200, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yumr"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(0, 1200, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e54dn"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(7680, 0, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dc4i4"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(5760, 0, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgrm8"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(3840, 0, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4lrb"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(1920, 0, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sa3yf"]
+atlas = ExtResource("1_fgkus")
+region = Rect2(0, 0, 1920, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jif1a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tklts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cs5ya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yumr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e54dn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dc4i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgrm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4lrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4lrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3yf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4lrb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sa3yf")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 2.5
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mykxm"]
+atlas = ExtResource("1_sa3yf")
+region = Rect2(0, 0, 1920, 1200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u26n3"]
+atlas = ExtResource("1_sa3yf")
+region = Rect2(1920, 0, 1920, 1200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3s0oq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mykxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u26n3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.5
+}]
+
+[node name="TitleScreen" type="Node2D" unique_id=643812394]
+script = ExtResource("1_s4lrb")
+
+[node name="Opening" type="AnimatedSprite2D" parent="." unique_id=284837960]
+sprite_frames = SubResource("SpriteFrames_jif1a")
+frame = 2
+frame_progress = 0.5862905
+centered = false
+
+[node name="Title" type="AnimatedSprite2D" parent="." unique_id=1284171069]
+position = Vector2(6, 18)
+sprite_frames = SubResource("SpriteFrames_3s0oq")
+frame_progress = 0.5374601
+centered = false
+
+[node name="Button" type="Button" parent="." unique_id=1959227837]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 295.0
+offset_top = 894.0
+offset_right = 617.0
+offset_bottom = 1027.0
+text = "Start!"
+
+[node name="Start" type="Sprite2D" parent="." unique_id=203938624]
+position = Vector2(451, 959)
+texture = ExtResource("4_mgrm8")
+
+[connection signal="pressed" from="Button" to="." method="OnBeginPressed"]
