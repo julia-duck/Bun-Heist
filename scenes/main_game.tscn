@@ -64,7 +64,38 @@ script = ExtResource("1_nqdth")
 texture = ExtResource("1_70vka")
 centered = false
 
-[node name="Ceiling" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
+[node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
+position = Vector2(3, 161)
+scale = Vector2(1, 2)
+
+[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
+position = Vector2(1384, 265)
+
+[node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
+position = Vector2(-1301, -906)
+
+[node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
+position = Vector2(1430, 948)
+
+[node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
+z_index = 100
+position = Vector2(698, 212)
+
+[node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
+z_index = 100
+position = Vector2(687, 208)
+
+[node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
+z_index = 100
+position = Vector2(689, 204)
+
+[node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
+z_index = 4000
+position = Vector2(139, 155)
+StartX = 135
+StartY = 170
+
+[node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
 position = Vector2(960, -1125)
 rotation = -0.003591772
 scale = Vector2(5, 5)
