@@ -20,9 +20,13 @@ public partial class Bun : Area2D
 	{
 		Hide();
 		CollisionShape2D colShape = GetNode<CollisionShape2D>("CollisionShape2D");
-		SetDeferred("disabled", true);
+		colShape.SetDeferred("disabled", true);
 		MainGame par = GetNode<MainGame>("..");
 		par.NumBuns++;
 		globalSound.PlaySound("collect_bun");
+	}
+	public void EnableShape() {
+		CollisionShape2D colShape = GetNode<CollisionShape2D>("CollisionShape2D");
+		colShape.Disabled = false;
 	}
 }

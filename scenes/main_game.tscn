@@ -130,7 +130,6 @@ text = "stop/reset"
 
 [node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
 position = Vector2(1406, 864)
-collision_mask = 2
 
 [node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
 position = Vector2(607, 416)
