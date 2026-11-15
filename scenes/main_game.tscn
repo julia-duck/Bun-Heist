@@ -222,9 +222,6 @@ vframes = 5
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
 
-[node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
-position = Vector2(1476, 152)
-
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
 offset_top = 30.0
