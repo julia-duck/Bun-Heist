@@ -14,6 +14,10 @@ config/name="Bun Heist"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalSound="*uid://m73bsvo6qjj6"
+
 [display]
 
 window/size/viewport_width=1920

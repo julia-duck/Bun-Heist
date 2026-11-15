@@ -17,6 +17,12 @@ public partial class Hedgie : CharacterBody2D
 	public const float Speed = 300.0f;
 	public float Gravity = 0.0003F;
 	public bool EnablePhysics = false;
+	public GlobalSound globalSound;
+
+	public override void _Ready()
+	{
+		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -41,6 +47,7 @@ public partial class Hedgie : CharacterBody2D
 					//pillow
 					if (colliderLayer == 8) { //1000 = layer 4
 						Velocity += info.GetNormal() * new Godot.Vector2(CushionBounciness, CushionBounciness);
+						globalSound.PlaySound("bounce");
 					}
 					//floor
 					else if (colliderLayer == 16) //10000 = layer 5

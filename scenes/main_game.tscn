@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+[gd_scene format=3 uid="uid://hpqesqd1ad50"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
