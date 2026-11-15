@@ -11,7 +11,7 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 3;
+	public static int levelNum = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -46,7 +46,6 @@ public partial class MainGame : Node2D
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
 			curPillow.Disable();
 		}
-		GD.Print(GetNode<Node2D>("Hedgie").GlobalPosition);
 	}
 	
 	public void OnPillowButtonClick() {
@@ -84,8 +83,8 @@ public partial class MainGame : Node2D
 		bun2.Show();
 		bun3.Show();
 		switch (levelNum) {
-			case 1: SetBunPos(360, 273, 578, 423, 757, 601); MoveLamp(-200, -200); break;
-			case 2: SetBunPos(462, 188, 471, 506, 128, 574); MoveLamp(568, 167); break;
+			case 1: SetBunPos(360, 273, 578, 423, 757, 601); MoveLamp(-200, -200); GetNode<Control>("Tutorial").Show(); break;
+			case 2: SetBunPos(462, 188, 471, 506, 128, 574); MoveLamp(568, 167); GetNode<Control>("Tutorial").Hide(); break;
 			case 3: SetBunPos(1406, 864, 607, 416, 1183, 371); MoveLamp(1384, 265); break;
 		}
 	}

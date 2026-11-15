@@ -1,9 +1,10 @@
-[gd_scene format=3 uid="uid://hpqesqd1ad50"]
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://6wgf2vr8djph" path="res://scripts/MainGame.cs" id="1_nqdth"]
 [ext_resource type="PackedScene" uid="uid://ceb2khe5etvmo" path="res://scenes/hedgie.tscn" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="3_ikqpi"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
 [ext_resource type="PackedScene" uid="uid://poc02j64xflg" path="res://scenes/stop_button.tscn" id="5_ygxny"]
@@ -62,6 +63,112 @@ script = ExtResource("1_nqdth")
 texture = ExtResource("1_70vka")
 centered = false
 
+[node name="Tutorial" type="Control" parent="." unique_id=1264779014]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Tutorial" type="ColorRect" parent="Tutorial" unique_id=929017816]
+layout_mode = 0
+offset_left = 1188.0
+offset_top = 369.0
+offset_right = 1891.0
+offset_bottom = 806.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial" unique_id=683804769]
+custom_minimum_size = Vector2(670, 0)
+custom_maximum_size = Vector2(670, -1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 785.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 30
+text = "Maven needs to collect all the hot cross buns without getting caught!
+- Drag and position bouncy pillows with a mouse
+- Drag the rotate icon to rotate a pillow
+
+Place the pillows in the right locations to help Maven collect the buns AND bounce back to the entrance without touching the floor!
+"
+autowrap_mode = 2
+
+[node name="Tutorial2" type="ColorRect" parent="Tutorial" unique_id=105568734]
+layout_mode = 0
+offset_left = 496.0
+offset_top = 143.0
+offset_right = 796.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial2" unique_id=1770219540]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to add a bouncy 
+pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial3" type="ColorRect" parent="Tutorial" unique_id=370169860]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 143.0
+offset_right = 1108.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial3" unique_id=1113785620]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to launch when you're ready!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial4" type="ColorRect" parent="Tutorial" unique_id=167464995]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 142.0
+offset_right = 1420.0
+offset_bottom = 278.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial4" unique_id=1284798078]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to reset Maven's position (after launching)!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial" unique_id=174981588]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(948.0001, 789)
+rotation = -0.7853982
+texture = ExtResource("3_ikqpi")
+vframes = 5
+
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
@@ -70,10 +177,12 @@ scale = Vector2(1, 2)
 position = Vector2(1384, 265)
 
 [node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
+visible = false
 position = Vector2(-1301, -906)
 
 [node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
-position = Vector2(1430, 948)
+visible = false
+position = Vector2(1969, 1054)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
 position = Vector2(862, 804)
@@ -173,26 +282,6 @@ texture = ExtResource("15_sp04v")
 [node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
-
-[node name="Tutorial" type="ColorRect" parent="." unique_id=929017816]
-offset_left = 1179.0
-offset_top = 189.0
-offset_right = 1882.0
-offset_bottom = 361.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-
-[node name="Label" type="Label" parent="Tutorial" unique_id=683804769]
-custom_minimum_size = Vector2(670, 0)
-custom_maximum_size = Vector2(670, -1)
-layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 785.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 30
-text = "Maven needs to collect all the hot cross buns without getting caught!
-Click “add pillow”"
-autowrap_mode = 2
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]

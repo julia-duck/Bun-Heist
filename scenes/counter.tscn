@@ -3,10 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://c5v63no2db7qk" path="res://assets/counter.png" id="1_sc7mx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jif1a"]
-size = Vector2(811, 885)
+size = Vector2(945.5, 885)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3s0oq"]
-size = Vector2(37, 63)
+size = Vector2(1007.5, 63)
 
 [node name="Counter" type="Sprite2D" unique_id=1447317909]
 texture = ExtResource("1_sc7mx")
@@ -14,9 +14,9 @@ texture = ExtResource("1_sc7mx")
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=96622740]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1405163165]
-position = Vector2(555.5, 155.5)
+position = Vector2(-5, 5)
 shape = SubResource("RectangleShape2D_jif1a")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D" unique_id=1582038581]
-position = Vector2(131.5, -255.5)
+position = Vector2(-5.75, -406)
 shape = SubResource("RectangleShape2D_3s0oq")
