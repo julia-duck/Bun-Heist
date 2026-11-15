@@ -8,6 +8,10 @@ public partial class MainGame : Node2D
 	public int CurPillowNum = 1;
 	public int NumBuns = 0;
 	public GlobalSound globalSound;
+	public Bun bun1;
+	public Bun bun2;
+	public Bun bun3;
+	public static int levelNum = 1;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,7 +22,11 @@ public partial class MainGame : Node2D
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
 			GetNode<Pillow>("Pillow" + i).Show();
 		}
+		bun1 = GetNode<Bun>("Bun1");
+		bun2 = GetNode<Bun>("Bun2");
+		bun3 = GetNode<Bun>("Bun3");
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
+		SetupLevel();
 		
 	}
 
@@ -47,6 +55,9 @@ public partial class MainGame : Node2D
 	public void OnRetreatButtonClick() {
 		GetNode<Sprite2D>("Baker").Hide();
 		GetNode<Sprite2D>("Caught").Hide();
+		bun1.Show();
+		bun2.Show();
+		bun3.Show();
 	}
 
 	public async void OnLose() {
@@ -61,5 +72,16 @@ public partial class MainGame : Node2D
 		if (GetNode<Sprite2D>("Baker").Visible) {
 			caughtSprite.Show();
 		}
+	}
+	
+	public void SetupLevel() {
+		if (levelNum == 1) {
+			SetBunPos(360, 273, 578, 423, 757, 601);
+		}
+	}
+	private void SetBunPos(int bun1X, int bun1Y, int bun2X, int bun2Y, int bun3X, int bun3Y) {
+		bun1.Position = new Vector2(bun1X, bun1Y);
+		bun2.Position = new Vector2(bun2X, bun2Y);
+		bun3.Position = new Vector2(bun3X, bun3Y);
 	}
 }

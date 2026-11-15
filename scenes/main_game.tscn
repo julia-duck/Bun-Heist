@@ -62,13 +62,13 @@ centered = false
 position = Vector2(3, 161)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
-position = Vector2(957, 772)
+position = Vector2(862, 804)
 
 [node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
-position = Vector2(572, 503)
+position = Vector2(1623, 259)
 
 [node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
-position = Vector2(729, 611)
+position = Vector2(1608, 120)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
 z_index = 4096
@@ -114,8 +114,14 @@ text = "stop/reset"
 
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
-[node name="Bun" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
-position = Vector2(533, 669)
+[node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
+position = Vector2(462, 188)
+
+[node name="Bun2" parent="." unique_id=1304143680 instance=ExtResource("11_5cypo")]
+position = Vector2(772, 669)
+
+[node name="Bun3" parent="." unique_id=760328884 instance=ExtResource("11_5cypo")]
+position = Vector2(272, 821)
 
 [node name="Baker" parent="." unique_id=1343255551 instance=ExtResource("12_o6v7o")]
 position = Vector2(2324, 576)
@@ -139,4 +145,3 @@ texture = ExtResource("13_wjob3")
 [connection signal="pressed" from="StopButton" to="Pillow2" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Pillow3" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Hedgie" method="OnStopPhysics"]
-[connection signal="pressed" from="StopButton" to="Bun" method="OnResetLevel"]
