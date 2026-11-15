@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+[gd_scene format=3 uid="uid://hpqesqd1ad50"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
+[ext_resource type="Script" uid="uid://6wgf2vr8djph" path="res://scripts/MainGame.cs" id="1_nqdth"]
 [ext_resource type="PackedScene" uid="uid://ceb2khe5etvmo" path="res://scenes/hedgie.tscn" id="2_0rdsr"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
@@ -11,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bow0i8d0evwfe" path="res://scenes/floor.tscn" id="7_wi4c7"]
 
 [node name="MainGame" type="Node2D" unique_id=1497187369]
+script = ExtResource("1_nqdth")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1309485281]
 texture = ExtResource("1_70vka")
@@ -30,9 +32,6 @@ position = Vector2(729, 611)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
 position = Vector2(109, 197)
-StartX = 109
-StartY = 197
-CushionBounciness = 400
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
 position = Vector2(960, -1125)
@@ -73,5 +72,9 @@ text = "stop/reset"
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
+[connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
+[connection signal="pressed" from="StartButton" to="Pillow1" method="OnStart"]
+[connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
+[connection signal="pressed" from="StartButton" to="Pillow3" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Hedgie" method="OnStartPhysics"]
 [connection signal="pressed" from="StopButton" to="Hedgie" method="OnStopPhysics"]
