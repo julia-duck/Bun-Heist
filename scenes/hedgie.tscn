@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://csorrrdy0i6ev" path="res://assets/hedgie.png" id="2_ehbt1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y6old"]
-radius = 86.83893
+radius = 74.00676
 
 [node name="Hedgie" type="CharacterBody2D" unique_id=415763027]
 collision_layer = 2

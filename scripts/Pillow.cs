@@ -54,6 +54,12 @@ public partial class Pillow : StaticBody2D
 	}
 	public void OnStart() {
 		moveable = false;
+		GetNode<Node2D>("Buttons").Hide();
+	}
+
+	public void OnStop() {
+		moveable = true;
+		GetNode<Node2D>("Buttons").Show();
 	}
 	
 	public void OnRotateButtonDown()
@@ -75,6 +81,6 @@ public partial class Pillow : StaticBody2D
 	public void Disable()
 	{
 		Hide();
-		GetNode<CollisionShape2D>("CollisionShape2D").Hide();
+		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
 	}
 }

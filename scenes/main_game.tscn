@@ -62,7 +62,7 @@ centered = false
 position = Vector2(189, 167)
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
-position = Vector2(555, 765)
+position = Vector2(957, 772)
 
 [node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
 position = Vector2(572, 503)
@@ -71,7 +71,9 @@ position = Vector2(572, 503)
 position = Vector2(729, 611)
 
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-position = Vector2(95, 177)
+position = Vector2(95, 170)
+StartX = 95
+StartY = 170
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
 position = Vector2(960, -1125)
@@ -93,20 +95,20 @@ scale = Vector2(3, 3)
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
 offset_top = 30.0
-offset_right = 649.0
-offset_bottom = 105.0
+offset_right = 775.0
+offset_bottom = 130.0
 
 [node name="StartButton" parent="." unique_id=1275617812 instance=ExtResource("4_ipu61")]
 offset_left = 845.0
 offset_top = 30.0
-offset_right = 890.0
-offset_bottom = 61.0
+offset_right = 1075.0
+offset_bottom = 130.0
 
 [node name="StopButton" parent="." unique_id=2102587589 instance=ExtResource("5_ygxny")]
 offset_left = 1145.0
 offset_top = 30.0
-offset_right = 1233.0
-offset_bottom = 61.0
+offset_right = 1375.0
+offset_bottom = 130.0
 text = "stop/reset"
 
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
@@ -121,7 +123,7 @@ position = Vector2(2324, 576)
 libraries/ = SubResource("AnimationLibrary_sp04v")
 
 [node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
-position = Vector2(882, 94)
+position = Vector2(882, 1100)
 texture = ExtResource("13_wjob3")
 
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
@@ -131,4 +133,8 @@ texture = ExtResource("13_wjob3")
 [connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow3" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Hedgie" method="OnStartPhysics"]
+[connection signal="pressed" from="StopButton" to="." method="OnRetreatButtonClick"]
+[connection signal="pressed" from="StopButton" to="Pillow1" method="OnStop"]
+[connection signal="pressed" from="StopButton" to="Pillow2" method="OnStop"]
+[connection signal="pressed" from="StopButton" to="Pillow3" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Hedgie" method="OnStopPhysics"]

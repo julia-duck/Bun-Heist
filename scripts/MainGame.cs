@@ -3,6 +3,7 @@ using System;
 
 public partial class MainGame : Node2D
 {
+	[Export]
 	public int MaxPillowNum = 3;
 	public int CurPillowNum = 1;
 	public int NumBuns = 0;
@@ -40,7 +41,14 @@ public partial class MainGame : Node2D
 			CurPillowNum += 1;
 		}
 	}
+
+	public void OnRetreatButtonClick() {
+		GetNode<Sprite2D>("Baker").Hide();
+		GetNode<Sprite2D>("Caught").Hide();
+	}
+
 	public async void OnLose() {
+		GetNode<Sprite2D>("Baker").Show();
 		AnimationPlayer ani = GetNode<AnimationPlayer>("BakerAni");
 		ani.Play("caught");
 		await ToSignal(ani, AnimationPlayer.SignalName.AnimationFinished);

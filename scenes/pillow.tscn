@@ -22,6 +22,7 @@ position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_xvnu6")
 
 [node name="Buttons" type="Node2D" parent="." unique_id=1317232137]
+z_index = 1
 
 [node name="RotateButton" type="Button" parent="Buttons" unique_id=2090902729]
 self_modulate = Color(1, 1, 1, 0)
