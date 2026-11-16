@@ -20,7 +20,6 @@
 [ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
 [ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
 [ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
-[ext_resource type="Texture2D" uid="uid://ckwoittw30t4c" path="res://assets/continue.png" id="20_yu8cv"]
 [ext_resource type="Texture2D" uid="uid://cia1t4kkqc51m" path="res://assets/thanks_for_playing.png" id="20_yu8cv"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
@@ -113,7 +112,7 @@ position = Vector2(3, 161)
 scale = Vector2(1, 2)
 
 [node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
-position = Vector2(436, -166)
+position = Vector2(1438, 77)
 
 [node name="Counter1" parent="." unique_id=1783139472 instance=ExtResource("17_vnsdt")]
 position = Vector2(-1301, -906)
@@ -153,7 +152,7 @@ position = Vector2(2595, 600)
 scale = Vector2(3, 3)
 
 [node name="Box2" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
-position = Vector2(-296, 970)
+position = Vector2(926, 811)
 
 [node name="Window2" parent="." unique_id=186923557 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
@@ -243,6 +242,7 @@ position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
 
 [node name="Thanks" type="Sprite2D" parent="." unique_id=642726382]
+visible = false
 z_index = 4096
 position = Vector2(957.00006, 595.00006)
 scale = Vector2(1.05625, 1.0591667)

@@ -11,7 +11,7 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 1;
+	public static int levelNum = 4;
 	public static int MaxLevels = 5;
 	
 	public Sprite2D bunCounter1;
@@ -148,28 +148,29 @@ public partial class MainGame : Node2D
 		switch (levelNum) {
 			case 1:
 				SetBunPos(360, 273, 578, 423, 757, 601);
-				MoveOffScreen(true, true, true);
+				MoveOffScreen(true, true, true, true);
 				GetNode<Node2D>("Tutorial").Show();
 				break;
 			case 2: 
 				SetBunPos(462, 188, 471, 506, 128, 574);
-				MoveOffScreen(false, true, true);
+				MoveOffScreen(false, true, true, true);
 				MoveLamp(568, 167); 
 				GetNode<Node2D>("Tutorial").Hide();
 				break;
 			case 3: 
 				SetBunPos(1406, 864, 607, 416, 1183, 371); 
-				MoveOffScreen(false, true, true); 
+				MoveOffScreen(false, true, true, true); 
 				MoveLamp(1384, 265); 
 				break;
 			case 4:
 				SetBunPos(1778, 295, 928, 305, 1393, 638);
-				MoveOffScreen(false, true, true); 
+				MoveOffScreen(false, true, true, false); 
+				MoveBox(926, 811);
 				MoveLamp(1476, 152);
 				break;
 			case 5:
 				SetBunPos(450, 604, 936, 315, 1662, 260);
-				MoveOffScreen(true, true, false);
+				MoveOffScreen(true, true, false, true);
 				MoveCounter1(1442, 1145);
 				break;
 		}
@@ -188,7 +189,10 @@ public partial class MainGame : Node2D
 	public void MoveCounter2(int x, int y) {
 		GetNode<Sprite2D>("Counter2").Position = new Vector2(x, y);
 	}
-	public void MoveOffScreen(bool lampOff, bool c1Off, bool c2Off) {
+	public void MoveBox(int x, int y) {
+		GetNode<Sprite2D>("Box2").Position = new Vector2(x, y);
+	}
+	public void MoveOffScreen(bool lampOff, bool c1Off, bool c2Off, bool boxOff) {
 		if (lampOff) {
 			MoveLamp(-200, -200);
 		}
@@ -197,6 +201,9 @@ public partial class MainGame : Node2D
 		}
 		if (c2Off) {
 			MoveCounter2(-400, -400);
+		}
+		if (boxOff) {
+			MoveBox(-300, -300);
 		}
 	}
 }
