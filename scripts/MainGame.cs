@@ -70,17 +70,18 @@ public partial class MainGame : Node2D
 		else if (NumBuns == 2) {
 			bunCounter3.Hide();
 		}
-		GD.Print(GetNode<Pillow>("Pillow1").moveable);
 	}
 	
 	public void OnPillowButtonClick() {
 		//give new pillow
 		if (CurPillowNum < MaxPillowNum) {
 			CurPillowNum += 1;
+			GetNode<Pillow>("Pillow" + CurPillowNum).OnStop();
 		}
 	}
 
 	public void OnRetreatButtonClick() {
+		GetNode<Node2D>("Unfinished").Hide();
 		GetNode<Sprite2D>("Baker").Hide();
 		GetNode<Sprite2D>("Caught").Hide();
 		//enable 3 buns collision shape
@@ -110,13 +111,21 @@ public partial class MainGame : Node2D
 	
 	public async void OnLevelComplete(Node2D hedgie)
 	{
-		var complete = GetNode<Node2D>("Complete");
-		complete.Show();
-		levelNum ++;
-		var button = complete.GetNode<Button>("Button");
-		await ToSignal(button, Button.SignalName.Pressed);
-		SetupLevel();
-		complete.Hide();
+		if (NumBuns == 3)
+		{
+			var complete = GetNode<Node2D>("Complete");
+			complete.Show();
+			levelNum ++;
+			var button = complete.GetNode<Button>("Button");
+			await ToSignal(button, Button.SignalName.Pressed);
+			SetupLevel();
+			complete.Hide();
+			CurPillowNum = 0;
+		}
+		else
+		{
+			GetNode<Node2D>("Unfinished").Show();
+		}
 	}
 
 	public void SetupLevel() {

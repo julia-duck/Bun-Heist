@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
 [ext_resource type="Script" uid="uid://6wgf2vr8djph" path="res://scripts/MainGame.cs" id="1_nqdth"]
 [ext_resource type="PackedScene" uid="uid://ceb2khe5etvmo" path="res://scenes/hedgie.tscn" id="2_0rdsr"]
+[ext_resource type="Texture2D" uid="uid://cf85fvuqu5sdr" path="res://assets/tutorial.png" id="3_5luka"]
 [ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="3_ikqpi"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
@@ -19,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
 [ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
 [ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
+[ext_resource type="Texture2D" uid="uid://ckwoittw30t4c" path="res://assets/continue.png" id="20_yu8cv"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -57,6 +59,12 @@ _data = {
 &"caught": SubResource("Animation_8xp80")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ibnub"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5wboo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6de02"]
+
 [node name="MainGame" type="Node2D" unique_id=1497187369]
 script = ExtResource("1_nqdth")
 
@@ -66,102 +74,38 @@ centered = false
 
 [node name="Tutorial" type="Node2D" parent="." unique_id=567130947]
 
-[node name="Tutorial" type="ColorRect" parent="Tutorial" unique_id=929017816]
-offset_left = 1188.0
-offset_top = 369.0
-offset_right = 1891.0
-offset_bottom = 806.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" unique_id=452913686]
+scale = Vector2(2, 2)
+texture = ExtResource("3_5luka")
+centered = false
 
-[node name="Label" type="Label" parent="Tutorial/Tutorial" unique_id=683804769]
-custom_minimum_size = Vector2(670, 0)
-custom_maximum_size = Vector2(670, -1)
-layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 785.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 30
-text = "Maven needs to collect all the hot cross buns without getting caught!
-- Drag and position bouncy pillows with a mouse
-- Drag the rotate icon to rotate a pillow
-
-Place the pillows in the right locations to help Maven collect the buns AND bounce back to the entrance without touching the floor!
-"
-autowrap_mode = 2
-
-[node name="Tutorial2" type="ColorRect" parent="Tutorial" unique_id=105568734]
-offset_left = 496.0
-offset_top = 143.0
-offset_right = 796.0
-offset_bottom = 243.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial2" unique_id=1770219540]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to add a bouncy 
-pillow!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Tutorial3" type="ColorRect" parent="Tutorial" unique_id=370169860]
-offset_left = 808.0
-offset_top = 143.0
-offset_right = 1108.0
-offset_bottom = 243.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial3" unique_id=1113785620]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to launch when you're ready!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Tutorial4" type="ColorRect" parent="Tutorial" unique_id=167464995]
-offset_left = 1120.0
-offset_top = 142.0
-offset_right = 1420.0
-offset_bottom = 278.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial4" unique_id=1284798078]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to reset Maven's position (after launching)!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Tutorial" unique_id=174981588]
+[node name="GhostPillow" type="Sprite2D" parent="Tutorial" unique_id=174981588]
 modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(948.0001, 789)
-rotation = -0.7853982
+position = Vector2(788.9999, 861.00006)
+rotation = -0.6981317
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("3_ikqpi")
 vframes = 5
+
+[node name="Unfinished" type="Node2D" parent="." unique_id=1132794680]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Unfinished" unique_id=62252393]
+offset_left = 580.0
+offset_top = 468.0
+offset_right = 1280.0
+offset_bottom = 642.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Unfinished/ColorRect" unique_id=892727957]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 657.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 30
+text = "Get all 3 buns to continue to the next level!
+(Press \"retreat\" to retry)"
 
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
@@ -250,22 +194,26 @@ position = Vector2(2324, 576)
 [node name="BakerAni" type="AnimationPlayer" parent="." unique_id=249938931]
 libraries/ = SubResource("AnimationLibrary_sp04v")
 
-[node name="Complete" type="Sprite2D" parent="BakerAni" unique_id=786887332]
+[node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
+position = Vector2(882, 1100)
+texture = ExtResource("13_wjob3")
+
+[node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
 visible = false
+z_index = 200
 position = Vector2(0, 400)
 texture = ExtResource("19_5luka")
 centered = false
 
-[node name="Button" type="Button" parent="BakerAni/Complete" unique_id=934767500]
+[node name="Button" type="Button" parent="Complete" unique_id=934767500]
 offset_left = 732.0
-offset_top = 378.0
-offset_right = 1173.0
-offset_bottom = 537.0
-text = "Next Level"
-
-[node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
-position = Vector2(882, 1100)
-texture = ExtResource("13_wjob3")
+offset_top = 370.0
+offset_right = 1087.0
+offset_bottom = 529.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ibnub")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_5wboo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6de02")
+icon = ExtResource("20_yu8cv")
 
 [node name="BunCounter" type="Node2D" parent="." unique_id=1795091298]
 
