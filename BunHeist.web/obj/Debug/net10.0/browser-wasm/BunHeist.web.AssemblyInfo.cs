@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BunHeist.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdea4a1fc53aeb63a55f5edd96b4f0281c3dc062")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6de8511a3d782130e35393a2c67c40df7bf46861")]
 [assembly: System.Reflection.AssemblyProductAttribute("BunHeist.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BunHeist.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

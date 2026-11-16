@@ -200,6 +200,7 @@ position = Vector2(882, 1100)
 texture = ExtResource("13_wjob3")
 
 [node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
+visible = false
 z_index = 200
 position = Vector2(0, 400)
 texture = ExtResource("19_5luka")

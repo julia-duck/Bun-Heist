@@ -190,7 +190,7 @@ public partial class MainGame : Node2D
 		GetNode<Sprite2D>("Counter2").Position = new Vector2(x, y);
 	}
 	public void MoveBox(int x, int y) {
-		GetNode<Sprite2D>("Box2").Position = new Vector2(x, y);
+		GetNode<Node2D>("Box2").Position = new Vector2(x, y);
 	}
 	public void MoveOffScreen(bool lampOff, bool c1Off, bool c2Off, bool boxOff) {
 		if (lampOff) {
