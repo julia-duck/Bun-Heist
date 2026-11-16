@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
+[gd_scene format=3 uid="uid://hpqesqd1ad50"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
 [ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
 [ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
+[ext_resource type="Texture2D" uid="uid://cia1t4kkqc51m" path="res://assets/thanks_for_playing.png" id="20_yu8cv"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -292,6 +293,12 @@ texture = ExtResource("15_sp04v")
 [node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
+
+[node name="Thanks" type="Sprite2D" parent="." unique_id=642726382]
+z_index = 4096
+position = Vector2(957.00006, 595.00006)
+scale = Vector2(1.05625, 1.0591667)
+texture = ExtResource("20_yu8cv")
 
 [connection signal="body_entered" from="Window" to="." method="OnLevelComplete"]
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]

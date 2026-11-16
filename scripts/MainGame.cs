@@ -12,10 +12,12 @@ public partial class MainGame : Node2D
 	public Bun bun2;
 	public Bun bun3;
 	public static int levelNum = 1;
+	public static int MaxLevels = 5;
 	
 	public Sprite2D bunCounter1;
 	public Sprite2D bunCounter2;
 	public Sprite2D bunCounter3;
+	public Sprite2D thanksScreen;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -25,6 +27,8 @@ public partial class MainGame : Node2D
 		bunCounter1 = GetNode<Sprite2D>("BunCounter/BunGet1");
 		bunCounter2 = GetNode<Sprite2D>("BunCounter/BunGet2");
 		bunCounter3 = GetNode<Sprite2D>("BunCounter/BunGet3");
+		thanksScreen = GetNode<Sprite2D>("Thanks");
+		thanksScreen.Hide();
 
 		for (int i = 1; i <= MaxPillowNum; i++) {
 			int rand = GD.RandRange(0, 4);
@@ -113,10 +117,16 @@ public partial class MainGame : Node2D
 		var complete = GetNode<Node2D>("Complete");
 		complete.Show();
 		levelNum ++;
-		var button = complete.GetNode<Button>("Button");
-		await ToSignal(button, Button.SignalName.Pressed);
-		SetupLevel();
-		complete.Hide();
+		
+		if (levelNum <= MaxLevels) {
+			var button = complete.GetNode<Button>("Button");
+			await ToSignal(button, Button.SignalName.Pressed);
+			complete.Hide();
+			SetupLevel();
+		}
+		else {
+			thanksScreen.Show();
+		}
 	}
 
 	public void SetupLevel() {
