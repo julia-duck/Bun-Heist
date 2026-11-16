@@ -132,8 +132,8 @@ script = ExtResource("1_s4lrb")
 
 [node name="Opening" type="AnimatedSprite2D" parent="." unique_id=284837960]
 sprite_frames = SubResource("SpriteFrames_jif1a")
-frame = 2
-frame_progress = 0.5862905
+frame = 19
+frame_progress = 1.0
 centered = false
 
 [node name="Title" type="AnimatedSprite2D" parent="." unique_id=1284171069]

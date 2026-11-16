@@ -20,7 +20,8 @@
 [ext_resource type="PackedScene" uid="uid://ccyf2lnpm0nxh" path="res://scenes/lamp.tscn" id="16_ihbck"]
 [ext_resource type="PackedScene" uid="uid://dhu337mhgwvyu" path="res://scenes/counter.tscn" id="17_vnsdt"]
 [ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
-[ext_resource type="Texture2D" uid="uid://cia1t4kkqc51m" path="res://assets/thanks_for_playing.png" id="20_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://ckwoittw30t4c" path="res://assets/continue.png" id="20_yu8cv"]
+[ext_resource type="Texture2D" uid="uid://cia1t4kkqc51m" path="res://assets/thanks_for_playing.png" id="22_5wboo"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -199,7 +200,6 @@ position = Vector2(882, 1100)
 texture = ExtResource("13_wjob3")
 
 [node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
-visible = false
 z_index = 200
 position = Vector2(0, 400)
 texture = ExtResource("19_5luka")
@@ -246,7 +246,7 @@ visible = false
 z_index = 4096
 position = Vector2(957.00006, 595.00006)
 scale = Vector2(1.05625, 1.0591667)
-texture = ExtResource("20_yu8cv")
+texture = ExtResource("22_5wboo")
 
 [connection signal="body_entered" from="Window" to="." method="OnLevelComplete"]
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]

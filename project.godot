@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Bun Heist"
+run/main_scene="uid://d0qu34f8molfg"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -29,7 +30,7 @@ window/stretch/aspect="expand"
 
 [dotnet]
 
-project/assembly_name="Bun Heist"
+project/assembly_name="BunHeist"
 
 [editor]
 
