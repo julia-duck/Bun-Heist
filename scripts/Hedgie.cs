@@ -89,7 +89,7 @@ public partial class Hedgie : CharacterBody2D
 	public void OnFinishLevel(Node2D player)
 	{
 		globalSound.PlaySound("success");
-		MainGame.levelNum++;
+		// MainGame.levelNum++;
 		// GetNode<MainGame>("..").SetupLevel();
 		EnablePhysics = false;
 	}

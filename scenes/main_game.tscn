@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://hpqesqd1ad50"]
+[gd_scene format=3 uid="uid://b1i07njx2tdwr"]
 
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="1_70vka"]
 [ext_resource type="PackedScene" uid="uid://dbshxkwukni22" path="res://scenes/pillow.tscn" id="1_d2op2"]
@@ -64,6 +64,105 @@ script = ExtResource("1_nqdth")
 texture = ExtResource("1_70vka")
 centered = false
 
+[node name="Tutorial" type="Node2D" parent="." unique_id=567130947]
+
+[node name="Tutorial" type="ColorRect" parent="Tutorial" unique_id=929017816]
+offset_left = 1188.0
+offset_top = 369.0
+offset_right = 1891.0
+offset_bottom = 806.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial" unique_id=683804769]
+custom_minimum_size = Vector2(670, 0)
+custom_maximum_size = Vector2(670, -1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 785.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 30
+text = "Maven needs to collect all the hot cross buns without getting caught!
+- Drag and position bouncy pillows with a mouse
+- Drag the rotate icon to rotate a pillow
+
+Place the pillows in the right locations to help Maven collect the buns AND bounce back to the entrance without touching the floor!
+"
+autowrap_mode = 2
+
+[node name="Tutorial2" type="ColorRect" parent="Tutorial" unique_id=105568734]
+offset_left = 496.0
+offset_top = 143.0
+offset_right = 796.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial2" unique_id=1770219540]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to add a bouncy 
+pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial3" type="ColorRect" parent="Tutorial" unique_id=370169860]
+offset_left = 808.0
+offset_top = 143.0
+offset_right = 1108.0
+offset_bottom = 243.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial3" unique_id=1113785620]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to launch when you're ready!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Tutorial4" type="ColorRect" parent="Tutorial" unique_id=167464995]
+offset_left = 1120.0
+offset_top = 142.0
+offset_right = 1420.0
+offset_bottom = 278.0
+color = Color(0.15, 0.072000004, 0.03, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/Tutorial4" unique_id=1284798078]
+custom_minimum_size = Vector2(300, 0)
+custom_maximum_size = Vector2(280, -1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 310.0
+offset_bottom = 323.0
+theme_override_font_sizes/font_size = 25
+text = "Click to reset Maven's position (after launching)!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial" unique_id=174981588]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(948.0001, 789)
+rotation = -0.7853982
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("3_ikqpi")
+vframes = 5
+
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
@@ -111,113 +210,6 @@ scale = Vector2(3, 3)
 [node name="Box2" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
 position = Vector2(-296, 970)
 
-[node name="Tutorial" type="Control" parent="." unique_id=1264779014]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Tutorial" type="ColorRect" parent="Tutorial" unique_id=929017816]
-layout_mode = 0
-offset_left = 1188.0
-offset_top = 369.0
-offset_right = 1891.0
-offset_bottom = 806.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial" unique_id=683804769]
-custom_minimum_size = Vector2(670, 0)
-custom_maximum_size = Vector2(670, -1)
-layout_mode = 0
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 785.0
-offset_bottom = 328.0
-theme_override_font_sizes/font_size = 30
-text = "Maven needs to collect all the hot cross buns without getting caught!
-- Drag and position bouncy pillows with a mouse
-- Drag the rotate icon to rotate a pillow
-
-Place the pillows in the right locations to help Maven collect the buns AND bounce back to the entrance without touching the floor!
-"
-autowrap_mode = 2
-
-[node name="Tutorial2" type="ColorRect" parent="Tutorial" unique_id=105568734]
-layout_mode = 0
-offset_left = 496.0
-offset_top = 143.0
-offset_right = 796.0
-offset_bottom = 243.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial2" unique_id=1770219540]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to add a bouncy 
-pillow!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Tutorial3" type="ColorRect" parent="Tutorial" unique_id=370169860]
-layout_mode = 0
-offset_left = 808.0
-offset_top = 143.0
-offset_right = 1108.0
-offset_bottom = 243.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial3" unique_id=1113785620]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to launch when you're ready!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Tutorial4" type="ColorRect" parent="Tutorial" unique_id=167464995]
-layout_mode = 0
-offset_left = 1120.0
-offset_top = 142.0
-offset_right = 1420.0
-offset_bottom = 278.0
-color = Color(0.15, 0.072000004, 0.03, 1)
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/Tutorial4" unique_id=1284798078]
-custom_minimum_size = Vector2(300, 0)
-custom_maximum_size = Vector2(280, -1)
-layout_mode = 0
-offset_left = 10.0
-offset_top = 10.0
-offset_right = 310.0
-offset_bottom = 323.0
-theme_override_font_sizes/font_size = 25
-text = "Click to reset Maven's position (after launching)!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="Tutorial" unique_id=174981588]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(948.0001, 789)
-rotation = -0.7853982
-texture = ExtResource("3_ikqpi")
-vframes = 5
-
 [node name="Window2" parent="." unique_id=186923557 instance=ExtResource("6_ygxny")]
 position = Vector2(3, 161)
 scale = Vector2(1, 2)
@@ -258,6 +250,19 @@ position = Vector2(2324, 576)
 [node name="BakerAni" type="AnimationPlayer" parent="." unique_id=249938931]
 libraries/ = SubResource("AnimationLibrary_sp04v")
 
+[node name="Complete" type="Sprite2D" parent="BakerAni" unique_id=786887332]
+visible = false
+position = Vector2(0, 400)
+texture = ExtResource("19_5luka")
+centered = false
+
+[node name="Button" type="Button" parent="BakerAni/Complete" unique_id=934767500]
+offset_left = 732.0
+offset_top = 378.0
+offset_right = 1173.0
+offset_bottom = 537.0
+text = "Next Level"
+
 [node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
 position = Vector2(882, 1100)
 texture = ExtResource("13_wjob3")
@@ -288,19 +293,7 @@ texture = ExtResource("15_sp04v")
 position = Vector2(1820, 80)
 texture = ExtResource("15_sp04v")
 
-[node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
-visible = false
-position = Vector2(0, 400)
-texture = ExtResource("19_5luka")
-centered = false
-
-[node name="Button" type="Button" parent="Complete" unique_id=934767500]
-offset_left = 732.0
-offset_top = 378.0
-offset_right = 1173.0
-offset_bottom = 537.0
-text = "Next Level"
-
+[connection signal="body_entered" from="Window" to="." method="OnLevelComplete"]
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]

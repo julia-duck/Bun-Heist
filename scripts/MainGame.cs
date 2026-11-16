@@ -11,7 +11,7 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 4;
+	public static int levelNum = 1;
 	
 	public Sprite2D bunCounter1;
 	public Sprite2D bunCounter2;
@@ -38,7 +38,7 @@ public partial class MainGame : Node2D
 		//bun2.Show();
 		//bun3.Show();
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
-		// SetupLevel(); //comment out for testing levels
+		SetupLevel(); //comment out for testing levels
 		
 	}
 
@@ -70,6 +70,7 @@ public partial class MainGame : Node2D
 		else if (NumBuns == 2) {
 			bunCounter3.Hide();
 		}
+		GD.Print(GetNode<Pillow>("Pillow1").moveable);
 	}
 	
 	public void OnPillowButtonClick() {
@@ -107,6 +108,17 @@ public partial class MainGame : Node2D
 		}
 	}
 	
+	public async void OnLevelComplete(Node2D hedgie)
+	{
+		var complete = GetNode<Node2D>("Complete");
+		complete.Show();
+		levelNum ++;
+		var button = complete.GetNode<Button>("Button");
+		await ToSignal(button, Button.SignalName.Pressed);
+		SetupLevel();
+		complete.Hide();
+	}
+
 	public void SetupLevel() {
 		NumBuns = 0;
 		bun1.Show();
@@ -116,13 +128,13 @@ public partial class MainGame : Node2D
 			case 1:
 				SetBunPos(360, 273, 578, 423, 757, 601);
 				MoveOffScreen(true, true, true);
-				GetNode<Control>("Tutorial").Show();
+				GetNode<Node2D>("Tutorial").Show();
 				break;
 			case 2: 
 				SetBunPos(462, 188, 471, 506, 128, 574);
 				MoveOffScreen(false, true, true);
 				MoveLamp(568, 167); 
-				GetNode<Control>("Tutorial").Hide();
+				GetNode<Node2D>("Tutorial").Hide();
 				break;
 			case 3: 
 				SetBunPos(1406, 864, 607, 416, 1183, 371); 
@@ -160,10 +172,10 @@ public partial class MainGame : Node2D
 			MoveLamp(-200, -200);
 		}
 		if (c1Off) {
-			MoveCounter1(-200, -200);
+			MoveCounter1(-400, -400);
 		}
 		if (c2Off) {
-			MoveCounter2(-200, -200);
+			MoveCounter2(-400, -400);
 		}
 	}
 }
