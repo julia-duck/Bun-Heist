@@ -1,7 +1,6 @@
 <Project Sdk="Godot.NET.Sdk/4.7.2">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net10.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>BunHeist</RootNamespace>
   </PropertyGroup>
@@ -11,9 +10,4 @@
     <ItemGroup>
         <PackageReference Include="2dog.godotsharp.editor" Version="$(TwoDogVersion)" Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Editor'" />
     </ItemGroup>
-    <!-- added by the 2dog tool: properties 2dog hosts need that were not already set -->
-    <PropertyGroup>
-        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <DefaultItemExcludes>$(DefaultItemExcludes);BunHeist.2dog/**;BunHeist.web/**</DefaultItemExcludes>
-    </PropertyGroup>
 </Project>

@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://ds0d88ao6ka0i"
-path="res://.godot/imported/success.wav-42cee4ec3d81e91a60d2ef09f04fd92c.sample"
+uid="uid://dv1aylhbqu6p0"
+path="res://.godot/imported/stone_roll.wav-f672cc78c9707d19263cdd5d3d3b52bf.sample"
 
 [deps]
 
-source_file="res://sound/success.wav"
-dest_files=["res://.godot/imported/success.wav-42cee4ec3d81e91a60d2ef09f04fd92c.sample"]
+source_file="res://assets/sound/stone_roll.wav"
+dest_files=["res://.godot/imported/stone_roll.wav-f672cc78c9707d19263cdd5d3d3b52bf.sample"]
 
 [params]
 

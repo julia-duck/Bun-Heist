@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://ch1p5jq6ppfk8"]
 
+[ext_resource type="StyleBox" uid="uid://8rmk4t0kywlb" path="res://assets/button_hover_pressed.tres" id="1_e6xtd"]
 [ext_resource type="Script" uid="uid://pfxjfhvvxyfl" path="res://scripts/LevelNum.cs" id="1_im2a0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lrgj7"]
+bg_color = Color(0.14901961, 0.07058824, 0.03137255, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6xtd"]
+bg_color = Color(0.1, 0.047333337, 0.020999998, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
 [node name="LevelNum" type="Button" unique_id=1968310907]
-offset_right = 185.0
+offset_right = 180.0
 offset_bottom = 153.0
-theme_override_colors/icon_normal_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+theme_override_colors/icon_normal_color = Color(0.14901961, 0.07058824, 0.03137255, 1)
 theme_override_colors/icon_pressed_color = Color(0.044557855, 0.044557847, 0.044557847, 1)
 theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = SubResource("StyleBoxFlat_lrgj7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e6xtd")
+theme_override_styles/hover = ExtResource("1_e6xtd")
 script = ExtResource("1_im2a0")

@@ -110,7 +110,7 @@ text = "Get all 3 buns to continue to the next level!
 (Press \"retreat\" to retry)"
 
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
-position = Vector2(3, 161)
+position = Vector2(13, 176)
 scale = Vector2(1, 2)
 
 [node name="Lamp" parent="." unique_id=324888064 instance=ExtResource("16_ihbck")]
@@ -155,10 +155,6 @@ scale = Vector2(3, 3)
 
 [node name="Box2" parent="." unique_id=1169485650 instance=ExtResource("3_ipu61")]
 position = Vector2(2149, 181)
-
-[node name="Window2" parent="." unique_id=186923557 instance=ExtResource("6_ygxny")]
-position = Vector2(3, 161)
-scale = Vector2(1, 2)
 
 [node name="PillowButton" parent="." unique_id=761076655 instance=ExtResource("6_2l77h")]
 offset_left = 545.0
@@ -257,7 +253,7 @@ visible = false
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
-[connection signal="pressed" from="StartButton" to="." method="OnRetreatButtonClick"]
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonClick"]
 [connection signal="pressed" from="StartButton" to="Pillow1" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow3" method="OnStart"]

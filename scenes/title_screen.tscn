@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c3lejb01pr7ut" path="res://assets/opening.png" id="1_fgkus"]
 [ext_resource type="Script" uid="uid://chdwug02lbihm" path="res://scripts/TitleScreen.cs" id="1_s4lrb"]
-[ext_resource type="Texture2D" uid="uid://1xgdryjg6eik" path="res://assets/title_screen.png" id="1_sa3yf"]
+[ext_resource type="Texture2D" uid="uid://cslf0ncu353cd" path="res://assets/title_screen.png" id="1_sa3yf"]
 [ext_resource type="Texture2D" uid="uid://c23v7rpj7ys37" path="res://assets/begin_game.png" id="4_mgrm8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tklts"]
