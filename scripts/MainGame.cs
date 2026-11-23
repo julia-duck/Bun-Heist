@@ -131,15 +131,9 @@ public partial class MainGame : Node2D
 				startB.Disabled = true;
 				stopB.Disabled = true;
 				levelNum ++;
-				LevelsUnlocked++;
-				var button = complete.GetNode<Button>("Button");
-				await ToSignal(button, Button.SignalName.Pressed);
-				pB.Disabled = false;
-				startB.Disabled = false;
-				stopB.Disabled = false;
-				SetupLevel();
-				complete.Hide();
-				CurPillowNum = 0;
+				if (LevelsUnlocked < levelNum) {
+					LevelsUnlocked = levelNum;
+				}
 			}
 			else {
 				thanksScreen.Show();
@@ -152,8 +146,18 @@ public partial class MainGame : Node2D
 		
 		
 	}
+	
 
 	public void SetupLevel() {
+		var complete = GetNode<Node2D>("Complete");
+		Button pB = GetNode<Button>("PillowButton");
+		Button startB = GetNode<Button>("StartButton");
+		Button stopB = GetNode<Button>("StopButton");
+		pB.Disabled = false;
+		startB.Disabled = false;
+		stopB.Disabled = false;
+		complete.Hide();
+		CurPillowNum = 0;
 		NumBuns = 0;
 		bun1.Show();
 		bun2.Show();

@@ -114,6 +114,14 @@ offset_bottom = 1070.0
 theme_override_font_sizes/font_size = 80
 text = "Select"
 
+[node name="Exit" type="Button" parent="." unique_id=1393979904]
+offset_left = 1727.0
+offset_top = 28.0
+offset_right = 1866.0
+offset_bottom = 103.0
+theme_override_font_sizes/font_size = 70
+text = "X"
+
 [connection signal="pressed" from="LevelNum1" to="LevelNum1" method="OnButtonPressed"]
 [connection signal="pressed" from="LevelNum2" to="LevelNum2" method="OnButtonPressed"]
 [connection signal="pressed" from="LevelNum3" to="LevelNum3" method="OnButtonPressed"]
@@ -122,3 +130,4 @@ text = "Select"
 [connection signal="pressed" from="LevelNum6" to="LevelNum6" method="OnButtonPressed"]
 [connection signal="pressed" from="LevelNum7" to="LevelNum7" method="OnButtonPressed"]
 [connection signal="pressed" from="Select" to="." method="OnSelectLevel"]
+[connection signal="pressed" from="Exit" to="." method="OnExit"]

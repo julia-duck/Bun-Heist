@@ -267,3 +267,4 @@ visible = false
 [connection signal="pressed" from="StopButton" to="Pillow2" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Pillow3" method="OnStop"]
 [connection signal="pressed" from="StopButton" to="Hedgie" method="OnStopPhysics"]
+[connection signal="pressed" from="Complete/Button" to="." method="SetupLevel"]

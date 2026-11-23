@@ -22,5 +22,8 @@ public partial class LevelSelectScreen : CanvasLayer
 		GetNode<MainGame>("..").SetupLevel();
 		Hide();
 	}
+	public void OnExit() {
+		Hide();
+	}
 	
 }
