@@ -118,8 +118,10 @@ public partial class MainGame : Node2D
 	{
 		
 		if (NumBuns == 3)
-		{	if (levelNum <= MaxLevels) {
-
+		{	
+			globalSound.PlaySound("success");
+			if (levelNum <= MaxLevels) {
+				
 				var complete = GetNode<Node2D>("Complete");
 				complete.Show();
 				Button pB = GetNode<Button>("PillowButton");
