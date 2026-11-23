@@ -12,11 +12,11 @@ public partial class GlobalSound : Node
 	{
 		SoundPlayer = GetNode<AudioStreamPlayer>("SoundEffectPlayer");
 
-		collect_bun = ResourceLoader.Load<AudioStream>("res://sound/collect_bun.wav");
-		bounce = ResourceLoader.Load<AudioStream>("res://sound/pillow_bounce.wav");
-		success = ResourceLoader.Load<AudioStream>("res://sound/success.wav");
-		stone_roll = ResourceLoader.Load<AudioStream>("res://sound/stone_roll.wav");
-		thump = ResourceLoader.Load<AudioStream>("res://sound/thump.wav");
+		collect_bun = ResourceLoader.Load<AudioStream>("res://assets/sound/collect_bun.wav");
+		bounce = ResourceLoader.Load<AudioStream>("res://assets/sound/pillow_bounce.wav");
+		success = ResourceLoader.Load<AudioStream>("res://assets/sound/success.wav");
+		stone_roll = ResourceLoader.Load<AudioStream>("res://assets/sound/stone_roll.wav");
+		thump = ResourceLoader.Load<AudioStream>("res://assets/sound/thump.wav");
 
 	}
 

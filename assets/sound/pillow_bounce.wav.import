@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://b8p78h5mfb7rk"
-path="res://.godot/imported/pillow_bounce.wav-93d88ff45c05368e958433e9778aeb32.sample"
+path="res://.godot/imported/pillow_bounce.wav-ee87763d9deb4aa50cf1ad158f4f1a6d.sample"
 
 [deps]
 
-source_file="res://sound/pillow_bounce.wav"
-dest_files=["res://.godot/imported/pillow_bounce.wav-93d88ff45c05368e958433e9778aeb32.sample"]
+source_file="res://assets/sound/pillow_bounce.wav"
+dest_files=["res://.godot/imported/pillow_bounce.wav-ee87763d9deb4aa50cf1ad158f4f1a6d.sample"]
 
 [params]
 
