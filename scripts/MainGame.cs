@@ -11,8 +11,8 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 4;
-	public static int MaxLevels = 5;
+	public static int levelNum = 1;
+	public static int MaxLevels = 7;
 	
 	public Sprite2D bunCounter1;
 	public Sprite2D bunCounter2;
@@ -42,7 +42,7 @@ public partial class MainGame : Node2D
 		//bun2.Show();
 		//bun3.Show();
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
-		SetupLevel(); //comment out for testing levels
+		//SetupLevel(); //comment out for testing levels
 		
 	}
 
@@ -121,9 +121,18 @@ public partial class MainGame : Node2D
 
 				var complete = GetNode<Node2D>("Complete");
 				complete.Show();
+				Button pB = GetNode<Button>("PillowButton");
+				Button startB = GetNode<Button>("StartButton");
+				Button stopB = GetNode<Button>("StopButton");
+				pB.Disabled = true;
+				startB.Disabled = true;
+				stopB.Disabled = true;
 				levelNum ++;
 				var button = complete.GetNode<Button>("Button");
 				await ToSignal(button, Button.SignalName.Pressed);
+				pB.Disabled = false;
+				startB.Disabled = false;
+				stopB.Disabled = false;
 				SetupLevel();
 				complete.Hide();
 				CurPillowNum = 0;
@@ -158,17 +167,25 @@ public partial class MainGame : Node2D
 				GetNode<Node2D>("Tutorial").Hide();
 				break;
 			case 3: 
+				SetBunPos(671, 859, 945, 663, 1236, 859);
+				MoveOffScreen(true, true, true, true);
+				break;
+			case 4:
+				SetBunPos(1200, 199, 1357, 204, 1509, 202);
+				MoveOffScreen(true, true, true, true);
+				break;
+			case 5: 
 				SetBunPos(1406, 864, 607, 416, 1183, 371); 
 				MoveOffScreen(false, true, true, true); 
 				MoveLamp(1384, 265); 
 				break;
-			case 4:
+			case 6:
 				SetBunPos(1778, 295, 928, 305, 1393, 638);
 				MoveOffScreen(false, true, true, false); 
 				MoveBox(926, 811);
 				MoveLamp(1476, 152);
 				break;
-			case 5:
+			case 7:
 				SetBunPos(450, 604, 936, 315, 1662, 260);
 				MoveOffScreen(true, true, false, true);
 				MoveCounter1(1442, 1145);
