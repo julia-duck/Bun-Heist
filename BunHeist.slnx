@@ -10,4 +10,12 @@
     <BuildType Solution="Editor|*" Project="Debug" />
     <Build Project="false" />
   </Project>
+  <Project Path="BunHeist.web2/BunHeist.web2.csproj">
+    <BuildType Solution="Editor|*" Project="Debug" />
+    <Build Project="false" />
+  </Project>
+  <Project Path="BunHeist.web3/BunHeist.web3.csproj">
+    <BuildType Solution="Editor|*" Project="Debug" />
+    <Build Project="false" />
+  </Project>
 </Solution>

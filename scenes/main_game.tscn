@@ -253,7 +253,7 @@ texture = ExtResource("22_5wboo")
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
 [connection signal="Lose" from="Hedgie" to="." method="OnLose"]
 [connection signal="pressed" from="PillowButton" to="." method="OnPillowButtonClick"]
-[connection signal="pressed" from="StartButton" to="." method="OnRetreatButtonClick"]
+[connection signal="pressed" from="StartButton" to="." method="OnStartButtonClick"]
 [connection signal="pressed" from="StartButton" to="Pillow1" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow2" method="OnStart"]
 [connection signal="pressed" from="StartButton" to="Pillow3" method="OnStart"]

@@ -7,6 +7,9 @@ public partial class Pillow : StaticBody2D
 	public bool follow = false;
 	public bool moveable = true;
 	public bool rotate = false;
+
+	public bool mouseOnPillow = false;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -40,11 +43,13 @@ public partial class Pillow : StaticBody2D
 		}
 		GetNode<Sprite2D>("Sprite2D").Frame = frameNum;
 	}
+
 	public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx) {
 		if (@event is InputEventMouseButton mouse && moveable) {
-			Vector2 mousePos = GetViewport().GetMousePosition();
-			Vector2 pillowPos = GlobalPosition;
-			if (mouse.Pressed && mousePos.X >= pillowPos.X - 150 && mousePos.X <= pillowPos.X + 150 && mousePos.Y >= pillowPos.Y - 50 && mousePos.Y <= pillowPos.Y + 50) {
+			// Vector2 mousePos = GetViewport().GetMousePosition();
+			// Vector2 pillowPos = GlobalPosition;
+			if (mouse.Pressed && mouseOnPillow)//mousePos.X >= pillowPos.X - 150 && mousePos.X <= pillowPos.X + 150 && mousePos.Y >= pillowPos.Y - 50 && mousePos.Y <= pillowPos.Y + 50) {
+			{
 				follow = true;
 			}
 		}
@@ -82,5 +87,14 @@ public partial class Pillow : StaticBody2D
 	{
 		Hide();
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+	}
+
+	public void OnMouseEntered()
+	{
+		mouseOnPillow = true;
+	}
+	public void OnMouseExited()
+	{
+		mouseOnPillow = false;
 	}
 }

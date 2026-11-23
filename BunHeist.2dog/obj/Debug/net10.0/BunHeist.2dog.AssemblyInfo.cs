@@ -10,10 +10,13 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Reflection.AssemblyMetadataAttribute("GodotProjectDir", "C:\\Users\\grace\\OneDrive\\Documents\\Godot-Projects\\Bun-Heist")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("TwoDogVariant", "debug")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("TwoDogGameAssembly", "BunHeist")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bdea4a1fc53aeb63a55f5edd96b4f0281c3dc062")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a9a41c97c7a3349d985402cfadef3e3a44d61ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

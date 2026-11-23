@@ -11,7 +11,7 @@ public partial class MainGame : Node2D
 	public Bun bun1;
 	public Bun bun2;
 	public Bun bun3;
-	public static int levelNum = 4;
+	public static int levelNum = 1;
 	public static int MaxLevels = 5;
 	
 	public Sprite2D bunCounter1;
@@ -84,6 +84,11 @@ public partial class MainGame : Node2D
 		}
 	}
 
+	public void OnStartButtonClick()
+	{
+		OnRetreatButtonClick();
+		GetNode<Button>("PillowButton").Disabled = true;
+	}
 	public void OnRetreatButtonClick() {
 		GetNode<Node2D>("Unfinished").Hide();
 		GetNode<Sprite2D>("Baker").Hide();
@@ -96,6 +101,7 @@ public partial class MainGame : Node2D
 		bun1.Show();
 		bun2.Show();
 		bun3.Show();
+		GetNode<Button>("PillowButton").Disabled = false;
 	}
 
 	public async void OnLose() {
@@ -115,18 +121,18 @@ public partial class MainGame : Node2D
 	
 	public async void OnLevelComplete(Node2D hedgie)
 	{
-		
 		if (NumBuns == 3)
-		{	if (levelNum <= MaxLevels) {
-
-				var complete = GetNode<Node2D>("Complete");
-				complete.Show();
-				levelNum ++;
-				var button = complete.GetNode<Button>("Button");
-				await ToSignal(button, Button.SignalName.Pressed);
-				SetupLevel();
-				complete.Hide();
-				CurPillowNum = 0;
+		{
+			globalSound.PlaySound("success");
+			if (levelNum < MaxLevels) {
+			var complete = GetNode<Node2D>("Complete");
+			complete.Show();
+			levelNum ++;
+			var button = complete.GetNode<Button>("Button");
+			await ToSignal(button, Button.SignalName.Pressed);
+			SetupLevel();
+			complete.Hide();
+			CurPillowNum = 0;
 			}
 			else {
 				thanksScreen.Show();
@@ -136,8 +142,6 @@ public partial class MainGame : Node2D
 		{
 			GetNode<Node2D>("Unfinished").Show();
 		}
-		
-		
 	}
 
 	public void SetupLevel() {
@@ -181,13 +185,13 @@ public partial class MainGame : Node2D
 		bun3.Position = new Vector2(bun3X, bun3Y);
 	}
 	public void MoveLamp(int x, int y) {
-		GetNode<StaticBody2D>("Lamp").Position = new Vector2(x, y);
+		GetNode<Node2D>("Lamp").Position = new Vector2(x, y);
 	}
 	public void MoveCounter1(int x, int y) {
-		GetNode<Sprite2D>("Counter1").Position = new Vector2(x, y);
+		GetNode<Node2D>("Counter1").Position = new Vector2(x, y);
 	}
 	public void MoveCounter2(int x, int y) {
-		GetNode<Sprite2D>("Counter2").Position = new Vector2(x, y);
+		GetNode<Node2D>("Counter2").Position = new Vector2(x, y);
 	}
 	public void MoveBox(int x, int y) {
 		GetNode<Node2D>("Box2").Position = new Vector2(x, y);
@@ -203,7 +207,7 @@ public partial class MainGame : Node2D
 			MoveCounter2(-400, -400);
 		}
 		if (boxOff) {
-			MoveBox(-300, -300);
+			MoveBox(-500, -500);
 		}
 	}
 }

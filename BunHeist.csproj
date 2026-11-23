@@ -1,7 +1,6 @@
 <Project Sdk="Godot.NET.Sdk/4.7.2">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net10.0</TargetFramework>
     <EnableDynamicLoading>true</EnableDynamicLoading>
     <RootNamespace>BunHeist</RootNamespace>
   </PropertyGroup>
@@ -15,5 +14,13 @@
     <PropertyGroup>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <DefaultItemExcludes>$(DefaultItemExcludes);BunHeist.2dog/**;BunHeist.web/**</DefaultItemExcludes>
+    </PropertyGroup>
+    <!-- added by the 2dog tool: properties 2dog hosts need that were not already set -->
+    <PropertyGroup>
+        <DefaultItemExcludes>$(DefaultItemExcludes);BunHeist.web2/**</DefaultItemExcludes>
+    </PropertyGroup>
+    <!-- added by the 2dog tool: properties 2dog hosts need that were not already set -->
+    <PropertyGroup>
+        <DefaultItemExcludes>$(DefaultItemExcludes);BunHeist.web3/**</DefaultItemExcludes>
     </PropertyGroup>
 </Project>
