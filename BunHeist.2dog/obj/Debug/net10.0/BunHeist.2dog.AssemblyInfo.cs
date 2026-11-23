@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a9a41c97c7a3349d985402cfadef3e3a44d61ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f9fae8bf8591a2c758f6a1e22f3ab7fd5f00d8c")]
 [assembly: System.Reflection.AssemblyProductAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BunHeist.2dog")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
