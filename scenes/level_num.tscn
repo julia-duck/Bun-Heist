@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ch1p5jq6ppfk8"]
+
+[ext_resource type="Script" uid="uid://pfxjfhvvxyfl" path="res://scripts/LevelNum.cs" id="1_im2a0"]
+
+[node name="LevelNum" type="Button" unique_id=1968310907]
+offset_right = 185.0
+offset_bottom = 153.0
+theme_override_colors/icon_normal_color = Color(0.41981313, 0.41981313, 0.4198131, 1)
+theme_override_colors/icon_pressed_color = Color(0.044557855, 0.044557847, 0.044557847, 1)
+theme_override_font_sizes/font_size = 80
+script = ExtResource("1_im2a0")

@@ -42,7 +42,7 @@ public partial class MainGame : Node2D
 		//bun2.Show();
 		//bun3.Show();
 		globalSound = GetNode<GlobalSound>("/root/GlobalSound");
-		//SetupLevel(); //comment out for testing levels
+		SetupLevel(); //comment out for testing levels
 		
 	}
 
@@ -154,17 +154,21 @@ public partial class MainGame : Node2D
 		bun1.Show();
 		bun2.Show();
 		bun3.Show();
+		if (levelNum == 1) {
+			GetNode<Node2D>("Tutorial").Show();
+		}
+		else {
+			GetNode<Node2D>("Tutorial").Hide();
+		}
 		switch (levelNum) {
 			case 1:
 				SetBunPos(360, 273, 578, 423, 757, 601);
 				MoveOffScreen(true, true, true, true);
-				GetNode<Node2D>("Tutorial").Show();
 				break;
 			case 2: 
 				SetBunPos(462, 188, 471, 506, 128, 574);
 				MoveOffScreen(false, true, true, true);
 				MoveLamp(568, 167); 
-				GetNode<Node2D>("Tutorial").Hide();
 				break;
 			case 3: 
 				SetBunPos(671, 859, 945, 663, 1236, 859);

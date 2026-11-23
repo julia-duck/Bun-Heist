@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://baq6er1gien8h" path="res://assets/level_complete.png" id="19_5luka"]
 [ext_resource type="Texture2D" uid="uid://ckwoittw30t4c" path="res://assets/continue.png" id="20_yu8cv"]
 [ext_resource type="Texture2D" uid="uid://cia1t4kkqc51m" path="res://assets/thanks_for_playing.png" id="22_5wboo"]
+[ext_resource type="PackedScene" uid="uid://iuoe3r6t2paw" path="res://scenes/level_select_screen.tscn" id="23_6de02"]
 
 [sub_resource type="Animation" id="Animation_wjob3"]
 length = 0.001
@@ -248,6 +249,9 @@ z_index = 4096
 position = Vector2(957.00006, 595.00006)
 scale = Vector2(1.05625, 1.0591667)
 texture = ExtResource("22_5wboo")
+
+[node name="LevelSelectScreen" parent="." unique_id=1675235508 instance=ExtResource("23_6de02")]
+visible = false
 
 [connection signal="body_entered" from="Window" to="." method="OnLevelComplete"]
 [connection signal="body_entered" from="Window" to="Hedgie" method="OnFinishLevel"]
