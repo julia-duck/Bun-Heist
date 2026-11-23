@@ -12,6 +12,7 @@ public partial class MainGame : Node2D
 	public Bun bun2;
 	public Bun bun3;
 	public static int levelNum = 1;
+	public static int LevelsUnlocked = 1;
 	public static int MaxLevels = 7;
 	
 	public Sprite2D bunCounter1;
@@ -128,6 +129,7 @@ public partial class MainGame : Node2D
 				startB.Disabled = true;
 				stopB.Disabled = true;
 				levelNum ++;
+				LevelsUnlocked++;
 				var button = complete.GetNode<Button>("Button");
 				await ToSignal(button, Button.SignalName.Pressed);
 				pB.Disabled = false;
