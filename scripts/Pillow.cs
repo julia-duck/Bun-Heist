@@ -3,6 +3,9 @@ using System;
 
 public partial class Pillow : StaticBody2D
 {
+	[Export]
+	public int pillowNum;
+	
 	public int frameNum = 1;
 	public bool follow = false;
 	public bool moveable = true;
@@ -79,14 +82,19 @@ public partial class Pillow : StaticBody2D
 	{
 		if (moveable)
 		{
-			Disable();
-			GetNode<MainGame>("..").CurPillowNum --;
+			MainGame root = GetNode<MainGame>("..");
+			root.pillowsUsed[pillowNum-1] = false;
+			root.CurPillowNum --;
 		}
 	}
 	public void Disable()
 	{
 		Hide();
 		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = true;
+	}
+	public void Enable() {
+		Show();
+		GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
 	}
 
 	public void OnMouseEntered()
