@@ -244,7 +244,7 @@ position = Vector2(2522, 1078)
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
 z_index = 2
 position = Vector2(139, 155)
-StartX = 135
+StartX = 140
 StartY = 170
 
 [node name="Box" parent="." unique_id=61419014 instance=ExtResource("3_ipu61")]
@@ -283,19 +283,16 @@ offset_bottom = 130.0
 text = "stop/reset"
 
 [node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
-visible = false
 z_index = 100
-position = Vector2(698, 212)
+position = Vector2(695, 315)
 
 [node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
-visible = false
 z_index = 100
-position = Vector2(687, 208)
+position = Vector2(695, 314)
 
 [node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
-visible = false
 z_index = 100
-position = Vector2(689, 204)
+position = Vector2(694, 312)
 
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 

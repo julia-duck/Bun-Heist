@@ -1,12 +1,14 @@
 using Godot;
 using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 public partial class MainGame : Node2D
 {
 	[Export]
 	public int MaxPillowNum = 3;
 	public int CurPillowNum = 0;
+	public List<bool> pillowsUsed;
 	public int NumBuns = 0;
 	public GlobalSound globalSound;
 	public Bun bun1;
@@ -26,6 +28,7 @@ public partial class MainGame : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		pillowsUsed = new List<bool>();
 		Sprite2D caughtSprite = GetNode<Sprite2D>("Caught");
 		caughtSprite.Hide();
 		bunCounter1 = GetNode<Sprite2D>("BunCounter/BunGet1");
@@ -35,6 +38,7 @@ public partial class MainGame : Node2D
 		thanksScreen.Hide();
 
 		for (int i = 1; i <= MaxPillowNum; i++) {
+			pillowsUsed.Add(false);
 			int rand = GD.RandRange(0, 4);
 			GetNode<Pillow>("Pillow" + i).SetRandFrame(rand);
 			GetNode<Pillow>("Pillow" + i).Show();
@@ -54,7 +58,7 @@ public partial class MainGame : Node2D
 	public override void _Process(double delta)
 	{
 		//show/hide pillows based on current number
-		for (int i = 1; i <= CurPillowNum; i++) {
+		/*for (int i = 1; i <= CurPillowNum; i++) {
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
 			curPillow.GetNode<CollisionShape2D>("CollisionShape2D").Disabled = false;
 			curPillow.Show();
@@ -62,6 +66,15 @@ public partial class MainGame : Node2D
 		for (int i = CurPillowNum + 1; i <= MaxPillowNum; i++) {
 			Pillow curPillow = GetNode<Pillow>("Pillow" + i);
 			curPillow.Disable();
+		}*/
+		for (int i = 0; i < MaxPillowNum; i++) {
+			Pillow curPillow = GetNode<Pillow>("Pillow" + (i+1));
+			if (pillowsUsed[i]){
+				curPillow.Enable();
+			}
+			else {
+				curPillow.Disable();
+			}
 		}
 		bunCounter1.Show();
 		bunCounter2.Show();
@@ -84,7 +97,19 @@ public partial class MainGame : Node2D
 		//give new pillow
 		if (CurPillowNum < MaxPillowNum) {
 			CurPillowNum += 1;
-			GetNode<Pillow>("Pillow" + CurPillowNum).OnStop();
+			bool added = false;
+			int index = 0;
+			for (int i = 0; i < CurPillowNum && !added; i++) {
+				if (!pillowsUsed[i]) {
+					pillowsUsed[i] = true;
+					index = i;
+					added = true;
+				}
+			}
+			if (!added){
+				GD.Print("Pillow not added");
+			}
+			GetNode<Pillow>("Pillow" + (index+1)).OnStop();
 		}
 	}
 
@@ -153,6 +178,11 @@ public partial class MainGame : Node2D
 		}
 	}
 	
+	public void GetRidOfPillows() {
+		for (int i = 0; i < MaxPillowNum; i++) {
+			pillowsUsed[i] = false;
+		}	
+	}
 
 	public void SetupLevel() {
 		var complete = GetNode<Node2D>("Complete");
@@ -164,6 +194,7 @@ public partial class MainGame : Node2D
 		stopB.Disabled = false;
 		complete.Hide();
 		CurPillowNum = 0;
+		GetRidOfPillows();
 		NumBuns = 0;
 		bun1.Show();
 		bun2.Show();
