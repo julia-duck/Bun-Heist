@@ -27,5 +27,6 @@ public partial class LevelNum : Button
 	}
 	public void OnButtonPressed() {
 		GetNode<LevelSelectScreen>("..").LevelSelected = ButtonNum;
+		GetNode<LevelSelectScreen>("..").UpdateSelectedLevel(ButtonNum);
 	}
 }

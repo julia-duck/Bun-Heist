@@ -25,5 +25,8 @@ public partial class LevelSelectScreen : CanvasLayer
 	public void OnExit() {
 		Hide();
 	}
+	public void UpdateSelectedLevel(int lvl) {
+		GetNode<Label>("LevelSelected").Text = "You Selected: Level " + lvl; 
+	}
 	
 }

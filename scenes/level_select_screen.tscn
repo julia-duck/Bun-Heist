@@ -3,20 +3,46 @@
 [ext_resource type="PackedScene" uid="uid://ch1p5jq6ppfk8" path="res://scenes/level_num.tscn" id="1_0emvf"]
 [ext_resource type="Script" uid="uid://1x7225wgwpju" path="res://scripts/LevelSelectScreen.cs" id="1_k72sg"]
 [ext_resource type="Texture2D" uid="uid://c0p84fjv0s511" path="res://assets/bakery.png" id="2_k72sg"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_c2qqo"]
+[ext_resource type="FontFile" uid="uid://d36fyxo7qscqa" path="res://assets/Mali-SemiBold.ttf" id="3_u571p"]
+[ext_resource type="Texture2D" uid="uid://dnfjukfa80m2n" path="res://assets/level_icons.png" id="4_c2qqo"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_u571p"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_wn31c"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6xtd"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(130, 0, 128, 120)
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_wgrkc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0epc"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(260, 0, 128, 115)
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_5mrkc"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktsqx"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(390, 0, 128, 115)
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_on843"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgs17"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(0, 115, 128, 115)
+
 [sub_resource type="ButtonGroup" id="ButtonGroup_5bvo4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jmx7b"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(130, 115, 128, 115)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_55cte"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2qqo"]
+atlas = ExtResource("4_c2qqo")
+region = Rect2(260, 115, 128, 115)
 
 [node name="LevelSelectScreen" type="CanvasLayer" unique_id=1675235508]
 script = ExtResource("1_k72sg")
@@ -29,29 +55,29 @@ centered = false
 offset_top = 47.0
 offset_right = 1900.0
 offset_bottom = 157.0
-theme_override_colors/font_color = Color(0.00069389754, 0.00069389766, 0.0006938976, 1)
+theme_override_colors/font_color = Color(0.95596343, 0.9559633, 0.95596343, 1)
+theme_override_fonts/font = ExtResource("3_u571p")
 theme_override_font_sizes/font_size = 80
 text = "Level Select"
 horizontal_alignment = 1
 
 [node name="LevelNum1" parent="." unique_id=1968310907 instance=ExtResource("1_0emvf")]
-offset_left = 200.0
+offset_left = 487.0
 offset_top = 256.0
-offset_right = 380.0
-offset_bottom = 409.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_c2qqo")
-text = "1"
-ButtonNum = 1
-
-[node name="LevelNum2" parent="." unique_id=1703839518 instance=ExtResource("1_0emvf")]
-offset_left = 530.0
-offset_top = 256.0
-offset_right = 715.0
+offset_right = 667.0
 offset_bottom = 409.0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_u571p")
-text = "2"
+ButtonNum = 1
+
+[node name="LevelNum2" parent="." unique_id=1703839518 instance=ExtResource("1_0emvf")]
+offset_left = 675.0
+offset_top = 256.0
+offset_right = 860.0
+offset_bottom = 409.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_wn31c")
+icon = SubResource("AtlasTexture_e6xtd")
 ButtonNum = 2
 
 [node name="LevelNum3" parent="." unique_id=917985927 instance=ExtResource("1_0emvf")]
@@ -60,48 +86,48 @@ offset_top = 256.0
 offset_right = 1045.0
 offset_bottom = 409.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_wn31c")
-text = "3"
+button_group = SubResource("ButtonGroup_wgrkc")
+icon = SubResource("AtlasTexture_m0epc")
 ButtonNum = 3
 
 [node name="LevelNum4" parent="." unique_id=1333353695 instance=ExtResource("1_0emvf")]
-offset_left = 1190.0
+offset_left = 1036.0
 offset_top = 256.0
-offset_right = 1375.0
-offset_bottom = 409.0
-toggle_mode = true
-button_group = SubResource("ButtonGroup_wgrkc")
-text = "4"
-ButtonNum = 4
-
-[node name="LevelNum5" parent="." unique_id=1471077069 instance=ExtResource("1_0emvf")]
-offset_left = 1520.0
-offset_top = 256.0
-offset_right = 1705.0
+offset_right = 1221.0
 offset_bottom = 409.0
 toggle_mode = true
 button_group = SubResource("ButtonGroup_5mrkc")
-text = "5"
+icon = SubResource("AtlasTexture_ktsqx")
+ButtonNum = 4
+
+[node name="LevelNum5" parent="." unique_id=1471077069 instance=ExtResource("1_0emvf")]
+offset_left = 1212.0
+offset_top = 256.0
+offset_right = 1397.0
+offset_bottom = 409.0
+toggle_mode = true
+button_group = SubResource("ButtonGroup_on843")
+icon = SubResource("AtlasTexture_mgs17")
 ButtonNum = 5
 
 [node name="LevelNum6" parent="." unique_id=189732293 instance=ExtResource("1_0emvf")]
-offset_left = 200.0
-offset_top = 510.0
-offset_right = 385.0
-offset_bottom = 663.0
+offset_left = 498.0
+offset_top = 407.0
+offset_right = 683.0
+offset_bottom = 560.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_on843")
-text = "6"
+button_group = SubResource("ButtonGroup_5bvo4")
+icon = SubResource("AtlasTexture_jmx7b")
 ButtonNum = 6
 
 [node name="LevelNum7" parent="." unique_id=505163444 instance=ExtResource("1_0emvf")]
-offset_left = 530.0
-offset_top = 510.0
-offset_right = 715.0
-offset_bottom = 663.0
+offset_left = 675.0
+offset_top = 407.0
+offset_right = 860.0
+offset_bottom = 560.0
 toggle_mode = true
-button_group = SubResource("ButtonGroup_5bvo4")
-text = "7"
+button_group = SubResource("ButtonGroup_55cte")
+icon = SubResource("AtlasTexture_c2qqo")
 ButtonNum = 7
 
 [node name="Select" type="Button" parent="." unique_id=1705087122]
@@ -109,6 +135,7 @@ offset_left = 696.0
 offset_top = 952.0
 offset_right = 1090.0
 offset_bottom = 1070.0
+theme_override_fonts/font = ExtResource("3_u571p")
 theme_override_font_sizes/font_size = 80
 text = "Select"
 
@@ -119,6 +146,16 @@ offset_right = 1866.0
 offset_bottom = 103.0
 theme_override_font_sizes/font_size = 70
 text = "X"
+
+[node name="LevelSelected" type="Label" parent="." unique_id=713896760]
+offset_left = 504.0
+offset_top = 802.0
+offset_right = 1308.0
+offset_bottom = 912.0
+theme_override_colors/font_color = Color(0.9852814, 0.9852814, 0.9852814, 1)
+theme_override_fonts/font = ExtResource("3_u571p")
+theme_override_font_sizes/font_size = 80
+text = "You Selected: Level 1"
 
 [connection signal="pressed" from="LevelNum1" to="LevelNum1" method="OnButtonPressed"]
 [connection signal="pressed" from="LevelNum2" to="LevelNum2" method="OnButtonPressed"]
