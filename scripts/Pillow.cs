@@ -10,6 +10,8 @@ public partial class Pillow : StaticBody2D
 	public bool follow = false;
 	public bool moveable = true;
 	public bool rotate = false;
+	public float XOffset = 0f;
+	public float YOffset = 0f;
 
 	public bool mouseOnPillow = false;
 
@@ -26,7 +28,8 @@ public partial class Pillow : StaticBody2D
 	{
 		if (follow) {
 			if (Input.IsMouseButtonPressed(MouseButton.Left)) {
-				GlobalPosition = GetViewport().GetMousePosition();
+				Vector2 offset = new Vector2(XOffset, YOffset);
+				GlobalPosition = GetViewport().GetMousePosition() + offset;
 			}
 			else {
 				follow = false;
@@ -49,10 +52,12 @@ public partial class Pillow : StaticBody2D
 
 	public override void _InputEvent(Viewport viewport, InputEvent @event, int shapeIdx) {
 		if (@event is InputEventMouseButton mouse && moveable) {
-			// Vector2 mousePos = GetViewport().GetMousePosition();
-			// Vector2 pillowPos = GlobalPosition;
-			if (mouse.Pressed && mouseOnPillow)//mousePos.X >= pillowPos.X - 150 && mousePos.X <= pillowPos.X + 150 && mousePos.Y >= pillowPos.Y - 50 && mousePos.Y <= pillowPos.Y + 50) {
+			Vector2 mousePos = GetViewport().GetMousePosition();
+			Vector2 pillowPos = GlobalPosition;
+			if (mouse.Pressed && mouseOnPillow)
 			{
+				XOffset = pillowPos.X - mousePos.X;
+				YOffset = pillowPos.Y - mousePos.Y;
 				follow = true;
 			}
 		}
