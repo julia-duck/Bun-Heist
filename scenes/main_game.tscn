@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="3_ikqpi"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
+[ext_resource type="PackedScene" uid="uid://cl4mc46qh3p6p" path="res://scenes/settings.tscn" id="5_cybgu"]
 [ext_resource type="PackedScene" uid="uid://poc02j64xflg" path="res://scenes/stop_button.tscn" id="5_ygxny"]
 [ext_resource type="PackedScene" uid="uid://cyuihgsv3evhs" path="res://scenes/pillow_button.tscn" id="6_2l77h"]
 [ext_resource type="PackedScene" uid="uid://ckquios0bji5f" path="res://scenes/window.tscn" id="6_ygxny"]
@@ -71,12 +72,14 @@ _data = {
 script = ExtResource("1_nqdth")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1309485281]
+self_modulate = Color(0.96, 0.91999996, 0.91199994, 1)
 texture = ExtResource("1_70vka")
 centered = false
 
 [node name="Tutorial" type="Node2D" parent="." unique_id=567130947]
 
 [node name="Sprite2D2" type="Sprite2D" parent="Tutorial" unique_id=452913686]
+visible = false
 scale = Vector2(2, 2)
 texture = ExtResource("3_5luka")
 centered = false
@@ -88,6 +91,120 @@ rotation = -0.6981317
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("3_ikqpi")
 vframes = 5
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial" unique_id=833907821]
+offset_left = 1273.0
+offset_top = 361.0
+offset_right = 1857.0
+offset_bottom = 535.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/ColorRect" unique_id=681270530]
+custom_maximum_size = Vector2(550, -1)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 586.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 30
+text = "Help Mavin collect all the hot cross buns without getting caught!"
+autowrap_mode = 2
+
+[node name="AddTutorial" type="ColorRect" parent="Tutorial" unique_id=218752143]
+offset_left = 495.0
+offset_top = 142.0
+offset_right = 796.0
+offset_bottom = 243.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/AddTutorial" unique_id=568972744]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Click to add a bouncy pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlaceTutorial" type="Control" parent="Tutorial" unique_id=894466294]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="PlaceTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1023548447]
+layout_mode = 0
+offset_left = 950.0
+offset_top = 732.0
+offset_right = 1251.0
+offset_bottom = 833.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/PlaceTutorial" unique_id=528592669]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Use the mouse to position the pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="LaunchTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1940194021]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 141.0
+offset_right = 1109.0
+offset_bottom = 242.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/LaunchTutorial" unique_id=605004815]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Click to launch when you're ready!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="RetreatTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1127161546]
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 141.0
+offset_right = 1420.0
+offset_bottom = 288.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/RetreatTutorial" unique_id=206518997]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 6.0
+offset_right = 301.0
+offset_bottom = 93.0
+theme_override_font_sizes/font_size = 30
+text = "Click to reset Maven's position (after launching)!"
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [node name="Unfinished" type="Node2D" parent="." unique_id=1132794680]
 visible = false
@@ -109,6 +226,8 @@ theme_override_font_sizes/font_size = 30
 text = "Get all 3 buns to continue to the next level!
 (Press \"retreat\" to retry)"
 
+[node name="Settings" parent="." unique_id=1880948065 instance=ExtResource("5_cybgu")]
+
 [node name="Window" parent="." unique_id=754531406 instance=ExtResource("6_ygxny")]
 position = Vector2(13, 176)
 scale = Vector2(1, 2)
@@ -122,20 +241,8 @@ position = Vector2(-1301, -906)
 [node name="Counter2" parent="." unique_id=841021329 instance=ExtResource("17_vnsdt")]
 position = Vector2(2522, 1078)
 
-[node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
-z_index = 100
-position = Vector2(698, 212)
-
-[node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
-z_index = 100
-position = Vector2(687, 208)
-
-[node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
-z_index = 100
-position = Vector2(689, 204)
-
 [node name="Hedgie" parent="." unique_id=415763027 instance=ExtResource("2_0rdsr")]
-z_index = 4000
+z_index = 2
 position = Vector2(139, 155)
 StartX = 135
 StartY = 170
@@ -175,6 +282,21 @@ offset_right = 1375.0
 offset_bottom = 130.0
 text = "stop/reset"
 
+[node name="Pillow1" parent="." unique_id=932516903 instance=ExtResource("1_d2op2")]
+visible = false
+z_index = 100
+position = Vector2(698, 212)
+
+[node name="Pillow2" parent="." unique_id=827920782 instance=ExtResource("1_d2op2")]
+visible = false
+z_index = 100
+position = Vector2(687, 208)
+
+[node name="Pillow3" parent="." unique_id=133698856 instance=ExtResource("1_d2op2")]
+visible = false
+z_index = 100
+position = Vector2(689, 204)
+
 [node name="Floor" parent="." unique_id=1801645969 instance=ExtResource("7_wi4c7")]
 
 [node name="Bun1" parent="." unique_id=1610711815 instance=ExtResource("11_5cypo")]
@@ -193,7 +315,8 @@ position = Vector2(2324, 576)
 libraries/ = SubResource("AnimationLibrary_sp04v")
 
 [node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
-position = Vector2(882, 1100)
+z_index = 3
+position = Vector2(960, 1080)
 texture = ExtResource("13_wjob3")
 
 [node name="Complete" type="Sprite2D" parent="." unique_id=786887332]
@@ -216,27 +339,27 @@ icon = ExtResource("20_yu8cv")
 [node name="BunCounter" type="Node2D" parent="." unique_id=1795091298]
 
 [node name="Sillou1" type="Sprite2D" parent="BunCounter" unique_id=2110688727]
-position = Vector2(1540, 80)
+position = Vector2(95, 1112.5)
 texture = ExtResource("14_8xp80")
 
 [node name="Sillou2" type="Sprite2D" parent="BunCounter" unique_id=1178323414]
-position = Vector2(1680, 80)
+position = Vector2(235, 1112.5)
 texture = ExtResource("14_8xp80")
 
 [node name="Sillou3" type="Sprite2D" parent="BunCounter" unique_id=1551206245]
-position = Vector2(1820, 80)
+position = Vector2(375, 1112.5)
 texture = ExtResource("14_8xp80")
 
 [node name="BunGet1" type="Sprite2D" parent="BunCounter" unique_id=1938929617]
-position = Vector2(1540, 80)
+position = Vector2(95, 1112.5)
 texture = ExtResource("15_sp04v")
 
 [node name="BunGet2" type="Sprite2D" parent="BunCounter" unique_id=487182321]
-position = Vector2(1680, 80)
+position = Vector2(235, 1112.5)
 texture = ExtResource("15_sp04v")
 
 [node name="BunGet3" type="Sprite2D" parent="BunCounter" unique_id=752079045]
-position = Vector2(1820, 80)
+position = Vector2(375, 1112.5)
 texture = ExtResource("15_sp04v")
 
 [node name="Thanks" type="Sprite2D" parent="." unique_id=642726382]

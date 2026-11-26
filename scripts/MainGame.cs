@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 
 public partial class MainGame : Node2D
 {
@@ -15,6 +16,7 @@ public partial class MainGame : Node2D
 	
 	public static int LevelsUnlocked = 1;
 	public static int MaxLevels = 7;
+	public static bool tutorial = false;
 	
 	public Sprite2D bunCounter1;
 	public Sprite2D bunCounter2;
@@ -167,9 +169,12 @@ public partial class MainGame : Node2D
 		bun2.Show();
 		bun3.Show();
 		if (levelNum == 1) {
+			tutorial = true;
 			GetNode<Node2D>("Tutorial").Show();
+			Tutorial();
 		}
 		else {
+			tutorial = false;
 			GetNode<Node2D>("Tutorial").Hide();
 		}
 		switch (levelNum) {
@@ -238,5 +243,21 @@ public partial class MainGame : Node2D
 		if (boxOff) {
 			MoveBox(-500, -500);
 		}
+	}
+
+	public async Task Tutorial()
+	{
+		GD.Print("Tutorial started");
+		Button pillowButton = GetNode<Button>("PillowButton");
+
+		GD.Print("Awaiting signal");//
+		await ToSignal(pillowButton, Button.SignalName.Pressed);
+
+		GD.Print("Hiding tutorial");//
+		GetNode<Control>("Tutorial/AddTutorial").Visible = false;
+		GD.Print("Pillow added");//
+
+		Control placeTutorial = GetNode<Control>("Tutorial/PlaceTutorial");
+		placeTutorial.Show();
 	}
 }

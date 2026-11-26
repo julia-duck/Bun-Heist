@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cl4mc46qh3p6p"]
+
+[ext_resource type="Texture2D" uid="uid://csph6jicq0kbu" path="res://assets/settings.png" id="1_5p8wc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jif1a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3s0oq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10b0d"]
+
+[node name="Settings" type="Control" unique_id=1880948065]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=2092511497]
+layout_mode = 0
+offset_left = 1793.0
+offset_top = 20.0
+offset_right = 1900.0
+offset_bottom = 120.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jif1a")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_3s0oq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_10b0d")
+icon = ExtResource("1_5p8wc")
