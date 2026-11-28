@@ -92,13 +92,12 @@ scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("3_ikqpi")
 vframes = 5
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial" unique_id=833907821]
+[node name="ColorRect" type="Panel" parent="Tutorial" unique_id=287936259]
 offset_left = 1273.0
 offset_top = 361.0
 offset_right = 1857.0
 offset_bottom = 535.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Tutorial/ColorRect" unique_id=681270530]
@@ -112,13 +111,12 @@ theme_override_font_sizes/font_size = 30
 text = "Help Mavin collect all the hot cross buns without getting caught!"
 autowrap_mode = 2
 
-[node name="AddTutorial" type="ColorRect" parent="Tutorial" unique_id=218752143]
+[node name="AddTutorial" type="Panel" parent="Tutorial" unique_id=292331189]
 offset_left = 495.0
 offset_top = 142.0
 offset_right = 796.0
 offset_bottom = 243.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Tutorial/AddTutorial" unique_id=568972744]
@@ -141,14 +139,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="PlaceTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1023548447]
+[node name="PlaceTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=894133713]
 layout_mode = 0
 offset_left = 950.0
 offset_top = 732.0
 offset_right = 1251.0
 offset_bottom = 833.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Tutorial/PlaceTutorial/PlaceTutorial" unique_id=528592669]
@@ -163,14 +160,13 @@ text = "Use the mouse to position the pillow!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="LaunchTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1940194021]
+[node name="LaunchTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=1920442444]
 layout_mode = 0
 offset_left = 808.0
 offset_top = 141.0
 offset_right = 1109.0
 offset_bottom = 242.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
 metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="Tutorial/PlaceTutorial/LaunchTutorial" unique_id=605004815]
@@ -185,14 +181,13 @@ text = "Click to launch when you're ready!"
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[node name="RetreatTutorial" type="ColorRect" parent="Tutorial/PlaceTutorial" unique_id=1127161546]
+[node name="RetreatTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=1351326335]
 layout_mode = 0
 offset_left = 1119.0
 offset_top = 141.0
 offset_right = 1420.0
 offset_bottom = 288.0
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="Tutorial/PlaceTutorial/RetreatTutorial" unique_id=206518997]
 custom_maximum_size = Vector2(300, -1)

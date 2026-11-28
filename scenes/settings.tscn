@@ -1,28 +1,48 @@
 [gd_scene format=3 uid="uid://cl4mc46qh3p6p"]
 
 [ext_resource type="Texture2D" uid="uid://csph6jicq0kbu" path="res://assets/settings.png" id="1_5p8wc"]
+[ext_resource type="Script" uid="uid://bv2d7r4kyg7gw" path="res://scenes/Settings.cs" id="1_f4mfi"]
+[ext_resource type="StyleBox" uid="uid://dolh240kpf2rr" path="res://scenes/text_panel.tres" id="2_r6d6q"]
+[ext_resource type="Texture2D" uid="uid://dg1a35ne2w5qg" path="res://assets/ok.png" id="3_6wm04"]
+[ext_resource type="Texture2D" uid="uid://cgqrunguxvmlb" path="res://assets/quit_game.png" id="5_es4n0"]
+[ext_resource type="Texture2D" uid="uid://6kmppq0njkhn" path="res://assets/sound.png" id="6_gis3k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jif1a"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3s0oq"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_10b0d"]
-
-[node name="Settings" type="Control" unique_id=1880948065]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Settings" type="CanvasLayer" unique_id=591347673]
+script = ExtResource("1_f4mfi")
 
 [node name="Button" type="Button" parent="." unique_id=2092511497]
-layout_mode = 0
 offset_left = 1793.0
 offset_top = 20.0
 offset_right = 1900.0
 offset_bottom = 120.0
-theme_override_styles/normal = SubResource("StyleBoxEmpty_jif1a")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_3s0oq")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_10b0d")
 icon = ExtResource("1_5p8wc")
+flat = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1952396027]
+offset_left = 867.0
+offset_top = 127.0
+offset_right = 1767.0
+offset_bottom = 627.0
+theme_override_styles/panel = ExtResource("2_r6d6q")
+
+[node name="LevelSelectButton" type="Button" parent="Panel" unique_id=215377667]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 294.0
+offset_right = 439.0
+offset_bottom = 453.0
+icon = ExtResource("3_6wm04")
+flat = true
+
+[node name="QuitGameButton" type="Button" parent="Panel" unique_id=1076803819]
+layout_mode = 0
+offset_left = 466.0
+offset_top = 289.0
+offset_right = 821.0
+offset_bottom = 448.0
+icon = ExtResource("5_es4n0")
+flat = true
+
+[node name="Sound" type="Sprite2D" parent="Panel" unique_id=498381858]
+position = Vector2(150, 137)
+texture = ExtResource("6_gis3k")

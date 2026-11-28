@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://76qvbomacar5"]
+
+[ext_resource type="Texture2D" uid="uid://d0yvknsdros5g" path="res://assets/pool_background.png" id="1_2yk36"]
+[ext_resource type="Texture2D" uid="uid://syttesecd7ob" path="res://assets/water.png" id="2_i7p2m"]
+
+[node name="main_game_2" type="Node2D" unique_id=1587803338]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=19366941]
+texture = ExtResource("1_2yk36")
+centered = false
+
+[node name="Water(make scene later)" type="Sprite2D" parent="." unique_id=1973167990]
+texture = ExtResource("2_i7p2m")
+centered = false
