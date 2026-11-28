@@ -278,17 +278,37 @@ public partial class MainGame : Node2D
 
 	public async Task Tutorial()
 	{
-		GD.Print("Tutorial started");
+		//help maven!
+		Button ok1 = GetNode<Button>("Tutorial/IntroTutorial/OkButton");
+		await ToSignal(ok1, Button.SignalName.Pressed);
+		GetNode<Control>("Tutorial/IntroTutorial").Hide();
+
+		//add pillow:
+		Control addTut = GetNode<Control>("Tutorial/AddTutorial");
+		addTut.Show();
 		Button pillowButton = GetNode<Button>("PillowButton");
-
-		GD.Print("Awaiting signal");//
 		await ToSignal(pillowButton, Button.SignalName.Pressed);
+		addTut.Hide();
 
-		GD.Print("Hiding tutorial");//
-		GetNode<Control>("Tutorial/AddTutorial").Visible = false;
-		GD.Print("Pillow added");//
-
+		//place tutorial
 		Control placeTutorial = GetNode<Control>("Tutorial/PlaceTutorial");
 		placeTutorial.Show();
+		Button ok2 = GetNode<Button>("Tutorial/PlaceTutorial/OkButton");
+		await ToSignal(ok2, Button.SignalName.Pressed);
+		placeTutorial.Hide();
+
+		//launch tutorial
+		Control launchTut = GetNode<Control>("Tutorial/LaunchTutorial");
+		launchTut.Show();
+		Button ok3 = GetNode<Button>("Tutorial/LaunchTutorial/OkButton");
+		await ToSignal(ok3, Button.SignalName.Pressed);
+		launchTut.Hide();
+
+		//retreat tutorial
+		Control retreatTutorial = GetNode<Control>("Tutorial/RetreatTutorial");
+		retreatTutorial.Show();
+		Button ok4 = GetNode<Button>("Tutorial/RetreatTutorial/OkButton");
+		await ToSignal(ok4, Button.SignalName.Pressed);
+		retreatTutorial.Hide();
 	}
 }

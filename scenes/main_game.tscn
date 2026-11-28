@@ -7,10 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://cf85fvuqu5sdr" path="res://assets/tutorial.png" id="3_5luka"]
 [ext_resource type="Texture2D" uid="uid://d3bakp042q08e" path="res://assets/cushions.png" id="3_ikqpi"]
 [ext_resource type="PackedScene" uid="uid://bjbttpvo61v0" path="res://scenes/box.tscn" id="3_ipu61"]
+[ext_resource type="Texture2D" uid="uid://lat3pnqwuwh4" path="res://assets/spotlight.png" id="3_x3ega"]
 [ext_resource type="PackedScene" uid="uid://1moagmc7avfo" path="res://scenes/start_button.tscn" id="4_ipu61"]
 [ext_resource type="PackedScene" uid="uid://cl4mc46qh3p6p" path="res://scenes/settings.tscn" id="5_cybgu"]
+[ext_resource type="StyleBox" uid="uid://dolh240kpf2rr" path="res://scenes/text_panel.tres" id="5_wdxbp"]
 [ext_resource type="PackedScene" uid="uid://poc02j64xflg" path="res://scenes/stop_button.tscn" id="5_ygxny"]
 [ext_resource type="PackedScene" uid="uid://cyuihgsv3evhs" path="res://scenes/pillow_button.tscn" id="6_2l77h"]
+[ext_resource type="Texture2D" uid="uid://c71nf6njq2ng" path="res://assets/ok_button.png" id="6_on6n6"]
 [ext_resource type="PackedScene" uid="uid://ckquios0bji5f" path="res://scenes/window.tscn" id="6_ygxny"]
 [ext_resource type="PackedScene" uid="uid://bow0i8d0evwfe" path="res://scenes/floor.tscn" id="7_wi4c7"]
 [ext_resource type="PackedScene" uid="uid://dx047xshvosb5" path="res://scenes/bun.tscn" id="11_5cypo"]
@@ -75,131 +78,6 @@ script = ExtResource("1_nqdth")
 self_modulate = Color(0.96, 0.91999996, 0.91199994, 1)
 texture = ExtResource("1_70vka")
 centered = false
-
-[node name="Tutorial" type="Node2D" parent="." unique_id=567130947]
-
-[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" unique_id=452913686]
-visible = false
-scale = Vector2(2, 2)
-texture = ExtResource("3_5luka")
-centered = false
-
-[node name="GhostPillow" type="Sprite2D" parent="Tutorial" unique_id=174981588]
-modulate = Color(1, 1, 1, 0.39215687)
-position = Vector2(788.9999, 861.00006)
-rotation = -0.6981317
-scale = Vector2(0.99999994, 0.99999994)
-texture = ExtResource("3_ikqpi")
-vframes = 5
-
-[node name="ColorRect" type="Panel" parent="Tutorial" unique_id=287936259]
-offset_left = 1273.0
-offset_top = 361.0
-offset_right = 1857.0
-offset_bottom = 535.0
-mouse_filter = 2
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/ColorRect" unique_id=681270530]
-custom_maximum_size = Vector2(550, -1)
-layout_mode = 0
-offset_left = 36.0
-offset_top = 40.0
-offset_right = 586.0
-offset_bottom = 127.0
-theme_override_font_sizes/font_size = 30
-text = "Help Mavin collect all the hot cross buns without getting caught!"
-autowrap_mode = 2
-
-[node name="AddTutorial" type="Panel" parent="Tutorial" unique_id=292331189]
-offset_left = 495.0
-offset_top = 142.0
-offset_right = 796.0
-offset_bottom = 243.0
-mouse_filter = 2
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/AddTutorial" unique_id=568972744]
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 6.0
-offset_right = 301.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 30
-text = "Click to add a bouncy pillow!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="PlaceTutorial" type="Control" parent="Tutorial" unique_id=894466294]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-mouse_filter = 2
-
-[node name="PlaceTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=894133713]
-layout_mode = 0
-offset_left = 950.0
-offset_top = 732.0
-offset_right = 1251.0
-offset_bottom = 833.0
-mouse_filter = 2
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/PlaceTutorial" unique_id=528592669]
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 6.0
-offset_right = 301.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 30
-text = "Use the mouse to position the pillow!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="LaunchTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=1920442444]
-layout_mode = 0
-offset_left = 808.0
-offset_top = 141.0
-offset_right = 1109.0
-offset_bottom = 242.0
-mouse_filter = 2
-metadata/_edit_group_ = true
-
-[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/LaunchTutorial" unique_id=605004815]
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 6.0
-offset_right = 301.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 30
-text = "Click to launch when you're ready!"
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="RetreatTutorial" type="Panel" parent="Tutorial/PlaceTutorial" unique_id=1351326335]
-layout_mode = 0
-offset_left = 1119.0
-offset_top = 141.0
-offset_right = 1420.0
-offset_bottom = 288.0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="Tutorial/PlaceTutorial/RetreatTutorial" unique_id=206518997]
-custom_maximum_size = Vector2(300, -1)
-layout_mode = 0
-offset_left = 1.0
-offset_top = 6.0
-offset_right = 301.0
-offset_bottom = 93.0
-theme_override_font_sizes/font_size = 30
-text = "Click to reset Maven's position (after launching)!"
-horizontal_alignment = 1
-autowrap_mode = 2
 
 [node name="Unfinished" type="Node2D" parent="." unique_id=1132794680]
 visible = false
@@ -305,6 +183,166 @@ position = Vector2(2324, 576)
 
 [node name="BakerAni" type="AnimationPlayer" parent="." unique_id=249938931]
 libraries/ = SubResource("AnimationLibrary_sp04v")
+
+[node name="Tutorial" type="Node2D" parent="." unique_id=567130947]
+
+[node name="GhostPillow" type="Sprite2D" parent="Tutorial" unique_id=174981588]
+modulate = Color(1, 1, 1, 0.39215687)
+position = Vector2(788.9999, 861.00006)
+rotation = -0.6981317
+scale = Vector2(0.9999999, 0.9999999)
+texture = ExtResource("3_ikqpi")
+vframes = 5
+
+[node name="Spotlight" type="Sprite2D" parent="Tutorial" unique_id=1090334608]
+visible = false
+self_modulate = Color(1, 1, 1, 0.60784316)
+position = Vector2(971, 439)
+texture = ExtResource("3_x3ega")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" unique_id=452913686]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_5luka")
+centered = false
+
+[node name="IntroTutorial" type="Panel" parent="Tutorial" unique_id=287936259]
+offset_left = 658.0
+offset_top = 390.0
+offset_right = 1242.0
+offset_bottom = 564.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_wdxbp")
+
+[node name="Label" type="Label" parent="Tutorial/IntroTutorial" unique_id=681270530]
+custom_maximum_size = Vector2(520, -1)
+layout_mode = 0
+offset_left = 36.0
+offset_top = 40.0
+offset_right = 586.0
+offset_bottom = 127.0
+theme_override_font_sizes/font_size = 30
+text = "Help Mavin collect all the hot cross buns without getting caught!"
+autowrap_mode = 2
+
+[node name="OkButton" type="Button" parent="Tutorial/IntroTutorial" unique_id=929169729]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 187.0
+offset_right = 349.0
+offset_bottom = 295.0
+icon = ExtResource("6_on6n6")
+flat = true
+
+[node name="AddTutorial" type="Panel" parent="Tutorial" unique_id=292331189]
+visible = false
+offset_left = 495.0
+offset_top = 142.0
+offset_right = 795.0
+offset_bottom = 272.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_wdxbp")
+
+[node name="Label" type="Label" parent="Tutorial/AddTutorial" unique_id=568972744]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_top = 21.0
+offset_right = 300.0
+offset_bottom = 108.0
+theme_override_font_sizes/font_size = 30
+text = "Click to add a bouncy pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="PlaceTutorial" type="Panel" parent="Tutorial" unique_id=894133713]
+visible = false
+offset_left = 950.0
+offset_top = 732.0
+offset_right = 1275.0
+offset_bottom = 862.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_wdxbp")
+
+[node name="Label" type="Label" parent="Tutorial/PlaceTutorial" unique_id=528592669]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 12.0
+offset_top = 20.0
+offset_right = 312.0
+offset_bottom = 107.0
+theme_override_font_sizes/font_size = 30
+text = "Use the mouse to position the pillow!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OkButton" type="Button" parent="Tutorial/PlaceTutorial" unique_id=878488974]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 129.0
+offset_right = 221.0
+offset_bottom = 237.0
+icon = ExtResource("6_on6n6")
+flat = true
+
+[node name="LaunchTutorial" type="Panel" parent="Tutorial" unique_id=1920442444]
+visible = false
+offset_left = 808.0
+offset_top = 141.0
+offset_right = 1108.0
+offset_bottom = 321.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_wdxbp")
+
+[node name="Label" type="Label" parent="Tutorial/LaunchTutorial" unique_id=605004815]
+custom_maximum_size = Vector2(270, -1)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 25.0
+offset_right = 285.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 30
+text = "Click to launch when you're ready!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OkButton" type="Button" parent="Tutorial/LaunchTutorial" unique_id=605271495]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 185.0
+offset_right = 207.0
+offset_bottom = 293.0
+icon = ExtResource("6_on6n6")
+flat = true
+
+[node name="RetreatTutorial" type="Panel" parent="Tutorial" unique_id=1351326335]
+visible = false
+offset_left = 1119.0
+offset_top = 141.0
+offset_right = 1419.0
+offset_bottom = 321.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("5_wdxbp")
+
+[node name="Label" type="Label" parent="Tutorial/RetreatTutorial" unique_id=206518997]
+custom_maximum_size = Vector2(300, -1)
+layout_mode = 0
+offset_left = 3.0
+offset_top = 25.0
+offset_right = 303.0
+offset_bottom = 151.0
+theme_override_font_sizes/font_size = 30
+text = "Click to reset Maven's position (after launching)!"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="OkButton" type="Button" parent="Tutorial/RetreatTutorial" unique_id=937930643]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 185.0
+offset_right = 207.0
+offset_bottom = 293.0
+icon = ExtResource("6_on6n6")
+flat = true
 
 [node name="Caught" type="Sprite2D" parent="." unique_id=1848337620]
 z_index = 3
